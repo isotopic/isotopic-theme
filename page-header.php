@@ -1,0 +1,26 @@
+<?php
+
+$title = strtolower(get_the_title( $ID )); 
+
+?>
+
+
+<div class="page-top">
+	<div class="container">
+		<h2><?php 
+
+
+
+			 if(is_home()){
+				echo "blog";
+			} else if (is_tag()){
+				echo  single_tag_title('tagged: ');
+			}else if (is_404()){
+				echo  "404";
+			}else {
+				echo $title;
+			}
+
+		?></h2>
+	</div>
+</div>

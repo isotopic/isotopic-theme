@@ -1,0 +1,33 @@
+{
+  "name": "isotopic",
+  "version": "0.0.3",
+  "description": "wordpress theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isotopic/isotopic.git"
+  },
+  "author": "guilhermecruz@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isotopic/isotopic/issues"
+  },
+  "homepage": "https://github.com/isotopic/isotopic#readme",
+  "devDependencies": {
+    "graceful-fs": "^4.1.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp.spritesmith": "^4.0.0",
+    "rsyncwrapper": "^0.4.3",
+    "spritesmith-texturepacker": "^1.0.0"
+  },
+  "dependencies": {
+    "gulp-spritesmith": "0.0.2"
+  }
+}
