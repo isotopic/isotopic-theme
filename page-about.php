@@ -93,19 +93,19 @@ get_template_part( 'page', 'header' );
 
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about1.png"> Interaction Design</h4>
-						<p> Protótipos e projetos de interação para interfaces como websites, web apps, games e dashboards além de interfaces low level como microcontroladores ou linha de comando.</p>
+						<p> Protótipos e projetos de interação para interfaces como websites, web apps, games e dashboards, além de interfaces low level como microcontroladores e linha de comando.</p>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about2.png"> Frontend Development</h4>
 						<p> Utilizo ou já utilizei PixiJS, Three.js, Chart.js, D3, svg via js, Angular, Sass e Gulp. Tenho experiência na integração entre sistemas através de APIs REST ou SOAP. 
 							Tenho experiência na produção, publicação e manutenção de apps nativos Android e iOS através de Phonegap. Gosto de desenvolver interfaces complexas que envolvam por ex. geometria.
-							Tenho boas noções de diagramação, tipografia, fotografia e ilustração. Tive duas camisetas <a href="http://www.camiseteria.com/profile.aspx?usr=gu1lh3rme" target="_blank">aprovadas</a> no site Camiseteria.
+							Tenho boas noções de diagramação, tipografia, fotografia e <a href="http://www.camiseteria.com/profile.aspx?usr=gu1lh3rme" target="_blank">ilustração</a>.
 						</p>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about3.png"> Backend Development</h4>
 						<p>Possuo conhecimento em Wordpress e Drupal.</p>
 						<p>Já utilizei frameworks PHP como Cake e Yii, mas atualmente os favoritos são CodeIgniter e Slim. Fiz <a href="https://s3.amazonaws.com/edu-cert.10gen.com/downloads/3c43ae47c8fe41628beecd4d48aef57d/Certificate.pdf">um curso</a> de MongoDB para NodeJS developers.
 							Tenho experiência em configuração e manutenção de servidores web linux, assim como setups de desenvolvimento local utilizando Virtual Box.
-							Gosto de automatizar tarefas com bash script.</p>
+							Gosto de automatizar tarefas através de bash scripts <a href="https://github.com/isotopic/isotopic-local" target="_blank">como este</a>.</p>
 
 					</div>
 				</div>
