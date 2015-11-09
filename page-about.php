@@ -129,7 +129,7 @@ get_template_part( 'page', 'header' );
 							</div>
 
 								<div class="about-timeline-fact about-timeline-fact-work">
-									<h5> <div>2002 <span>jan</span></div> Início</h5>
+									<h5> <div>2002 <span>jan</span></div> Era uma vez</h5>
 									<p>
 										No início de 2002 publiquei a primeira versão do Isotopic — 
 										na época um blog pessoal sobre design e programação —  criado para estudar técnicas e conhecer pessoas com o mesmo interesse.

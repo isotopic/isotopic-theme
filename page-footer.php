@@ -27,7 +27,7 @@
 				    	echo "\n<ul>";
 					    foreach($recent_posts as $post){
 					    	echo "\n";
-					    	echo '<li><a href="blog/'.$post['post_name'].'">'.$post['post_title'].'</a></li>';
+					    	echo '<li><a href="'.home_url().'/blog/'.$post['post_name'].'">'.$post['post_title'].'</a></li>';
 					    }
 					    echo "\n</ul>";
 				    }

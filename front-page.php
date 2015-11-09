@@ -82,5 +82,5 @@ $contact_id = getIdBySlug('contact');
 
 
 
-<?php get_template_part( 'page', 'footer-frontpage' ); ?>
+<?php get_template_part( 'page', 'footer-front-page' ); ?>
 <?php get_footer(); ?>

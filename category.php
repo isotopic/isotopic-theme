@@ -11,17 +11,17 @@ get_template_part( 'page', 'header' );
 		<div class="row">
 
 			<div class="col-xs-4 text-left" >
-				<a href="<?php echo home_url().($paged?'/blog':'');?>">
+				<a href="<?php echo home_url();?>/blog">
 					<div class="toolbar-pill">
 						<svg style="margin:0 0 -1px 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="10" height="16">
 						    <path d="M6,5 L2,10 L6,15" style="stroke:#999; fill:none;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3"/>
 						</svg>
-					  <?php echo ($paged?'blog':'home');?></div>
+					  blog</div>
 				</a>
 			</div>
 
 			<div class="col-xs-8 text-right" >
-
+				<!--<h3>Blog</h3>-->
 			</div>
 
 
@@ -60,20 +60,24 @@ get_template_part( 'page', 'header' );
 			</div>
 
 
-
-
+			
 			<div class="col-sm-5 blog-side">
 				<?php get_template_part( 'home', 'blog-side'); ?>
 			</div>
+			
 
 
 		</div><!-- row -->
 
 
 
-
 	</div>
 </div>
+
+
+
+
+
 
 
 
