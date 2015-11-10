@@ -1,6 +1,6 @@
 <?php
-get_header(); 
-get_template_part( 'page', 'header' ); 
+get_header();
+get_template_part( 'page', 'header' );
  ?>
 
 
@@ -16,9 +16,9 @@ get_template_part( 'page', 'header' );
 						</svg>
 					  home</div>
 				</a>
-			</div>	
+			</div>
 
-			<div class="col-xs-6 text-right" > 
+			<div class="col-xs-6 text-right" >
 
 				<div class="toolbar-pill  toolbar-filter pointer">
 					<svg  style="margin:0 0 -3px 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="20" height="15">
@@ -30,10 +30,10 @@ get_template_part( 'page', 'header' );
 						 <rect x="3" y="11" height="4" width="2" style="stroke:none; fill: #999"/>
 					</svg>
 					  filter
-				</div>	
+				</div>
 
 				<div class="toolbar-pill toolbar-filter-selected" style="display:none">
-					 <span class="holder"></span> 
+					 <span class="holder"></span>
 					 <svg style="margin:0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="10" height="12">
 						<line x1="5" y1="5"    x2="9" y2="9"    style="stroke:#999;"  stroke-width="2" stroke-linecap="square"/>
 						<line x1="5" y1="9"    x2="9" y2="5"    style="stroke:#999;"  stroke-width="2" stroke-linecap="square"/>
@@ -55,29 +55,29 @@ get_template_part( 'page', 'header' );
 	<div class="container" style="display:none"><!-- to hidden -->
 		<div class="row ">
 
-			<?php 
+			<?php
 			$args = array(
 			    'orderby'           => 'id', //id, count, slug
 			    'order'             => 'ASC',
-			    'hide_empty'        => true, 
-			    'exclude'           => array(), 
-			    'exclude_tree'      => array(), 
+			    'hide_empty'        => true,
+			    'exclude'           => array(),
+			    'exclude_tree'      => array(),
 			    'include'           => array(),
-			    'number'            => '', 
-			    'fields'            => 'all', 
+			    'number'            => '',
+			    'fields'            => 'all',
 			    'slug'              => '',
 			    'parent'            => '',
-			    'hierarchical'      => true, 
+			    'hierarchical'      => true,
 			    'child_of'          => 0,
 			    'childless'         => false,
-			    'get'               => '', 
+			    'get'               => '',
 			    'name__like'        => '',
 			    'description__like' => '',
-			    'pad_counts'        => false, 
-			    'offset'            => '', 
-			    'search'            => '', 
+			    'pad_counts'        => false,
+			    'offset'            => '',
+			    'search'            => '',
 			    'cache_domain'      => 'core'
-			); 
+			);
 
 			$type = get_terms('type', $args);
 			$service = get_terms('service', $args);
@@ -140,9 +140,9 @@ get_template_part( 'page', 'header' );
 		<div class="row">
 
 
-		<?php 
+		<?php
 
-		$args = array('post_parent' => get_the_ID(),'post_type'   => 'page', 'posts_per_page' => -1,'post_status' => 'publish' ); 
+		$args = array('post_parent' => get_the_ID(),'post_type'   => 'page', 'posts_per_page' => -1,'post_status' => 'publish' );
 
 		$children = get_children( $args);
 
@@ -151,7 +151,7 @@ get_template_part( 'page', 'header' );
 			$title = get_the_title($project->ID);
 			$link = get_page_link( $project->ID);
 			$img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $project->ID ), 'large' );
-			$img_url[0] = ( getimagesize($img_url[0]) ? $img_url[0] : get_template_directory_uri().'/img/default/700x500.jpg');
+			//$img_url[0] = ( getimagesize($img_url[0]) ? $img_url[0] : get_template_directory_uri().'/img/default/700x500.jpg');
 			$type_name = "&nbsp;";        $type_slug = "";
 			$service_name = "&nbsp;";  $service_slug = "";
 			$client_name = "&nbsp;";     $client_slug = "";
@@ -161,23 +161,23 @@ get_template_part( 'page', 'header' );
 			$services = get_the_terms($project->ID, 'service');
 			$clients = get_the_terms($project->ID, 'client');
 
-			if ( $types){ 
-				foreach($types as $type){ 
+			if ( $types){
+				foreach($types as $type){
 					$type_name =  $type->name;
 					$type_slug =  $type->slug;
 				 }
 			 }
-			if ( $services){ 
-				foreach($services as $service){ 
+			if ( $services){
+				foreach($services as $service){
 					$service_name =  $service->name;
 					//apenas o services permite mais de um
 					$service_slug .= ( $service_slug!=""?",":''). $service->slug;
 				 }
 			 }
 			if ( $clients){
-				 foreach($clients as $client){ 
-					 $client_name =  $client->name; 
-					 $client_slug =   $client->slug; 
+				 foreach($clients as $client){
+					 $client_name =  $client->name;
+					 $client_slug =   $client->slug;
 				}
 			 }
 		?>
@@ -212,7 +212,7 @@ get_template_part( 'page', 'header' );
 
 <?php
 
-get_template_part( 'page', 'footer' ); 
-get_footer(); 
+get_template_part( 'page', 'footer' );
+get_footer();
 
 ?>
