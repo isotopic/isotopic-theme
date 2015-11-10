@@ -19,9 +19,13 @@ $title = strtolower(get_the_title( $ID ));
 				echo  single_cat_title('cat: ');
 			}else if (is_404()){
 				echo  "404";
+			}else if (is_single()){
+				echo "blog";//echo $title;
 			}else {
 				echo $title;
 			}
+
+
 
 		?></h2>
 	</div>

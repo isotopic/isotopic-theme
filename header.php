@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
 
 
-<header>
+<header id="main">
 	<div class="container">
 
 		<h1 id="logo"><?php echo '<a href="'.home_url().'"><img src="'.get_template_directory_uri().'/img/logo_wide.svg" alt="'.get_bloginfo( 'name' ).'"></a>'; ?></h1>

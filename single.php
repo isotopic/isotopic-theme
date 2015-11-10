@@ -36,133 +36,157 @@ get_template_part( 'page', 'header' );
 
 
 
-<div class="container blog-post-content">
+<div class="content-panel blog-content">
+	<div class="container">
 
-	
-	<div class="row">
+		<div class="row">
 
-
-		<div class="col-md-7">
-
-
-<?php
-
-if (have_posts()){ 
-
-    while (have_posts()){ 
-
-     	//Iterator
-		the_post();
-
-		//Post vars
-		$id = get_the_ID();
-		$permalink = get_permalink();
-		$title = get_the_title();
-		$content = get_the_content();
-		$date = get_the_date( $d );
-		
-		//Render
-		echo '<h2>'.$title.'</h2>';
-		echo '<p><b>'.$date.'</b></p>';
-
-		echo '<p>'.$content.'</p>';
-
-		
+			<div class="col-sm-7 blog-post">
 
 
-		//----- Exibir comentários
+	<?php
 
-		$params = array(
-			'author_email' => '',
-			'ID' => '',
-			'karma' => '',
-			'number' => '',
-			'offset' => '',
-			'orderby' => '',
-			'order' => 'DESC',
-			'parent' => '',
-			'post_id' => $id,
-			'post_author' => '',
-			'post_name' => '',
-			'post_parent' => '',
-			'post_status' => '',
-			'post_type' => '',
-			'status' => '',
-			'type' => '',
-			'user_id' => '',
-			'search' => '',
-			'count' => false,
-			'meta_key' => '',
-			'meta_value' => '',
-			'meta_query' => '',
-		);
-		$comments = get_comments($params);
+	if (have_posts()){ 
 
-		foreach ($comments as $comment) {
+	    while (have_posts()){ 
+
+	     	//Iterator
+			the_post();
+
+			//Post vars
+			$id = get_the_ID();
+			$permalink = get_permalink();
+			$title = get_the_title();
+			$content = get_the_content();
+			$date = get_the_date( $d );
+
+			?>
+			
+			<header>
+			<h2><?php echo $title; ?></h2>
+			<p><?php echo $date; ?></p>
+			</header>
+
+			<article>
+			<p><?php echo $content; ?></p>
+			</article>
+			
+			<?php
+
+			//----- Exibir comentários
+
+			/*
+
+			$params = array(
+				'author_email' => '',
+				'ID' => '',
+				'karma' => '',
+				'number' => '',
+				'offset' => '',
+				'orderby' => '',
+				'order' => 'DESC',
+				'parent' => '',
+				'post_id' => $id,
+				'post_author' => '',
+				'post_name' => '',
+				'post_parent' => '',
+				'post_status' => '',
+				'post_type' => '',
+				'status' => '',
+				'type' => '',
+				'user_id' => '',
+				'search' => '',
+				'count' => false,
+				'meta_key' => '',
+				'meta_value' => '',
+				'meta_query' => '',
+			);
+			$comments = get_comments($params);
+
+			foreach ($comments as $comment) {
 
 
-			//var_dump($comment);
+				//var_dump($comment);
 
-			echo "\n\t".'<br/><br/><small>"';
-			echo $comment->comment_content;
-			echo "\" - <b>".$comment->comment_author."</b>";
-			echo " em  <b>".date("d/m/Y", strtotime($comment->comment_date))."</b>";
-			echo '</small>';
-		}
+				echo "\n\t".'<br/><br/><small>"';
+				echo $comment->comment_content;
+				echo "\" - <b>".$comment->comment_author."</b>";
+				echo " em  <b>".date("d/m/Y", strtotime($comment->comment_date))."</b>";
+				echo '</small>';
+			}
 
-		echo "\n\n\n\n\n";
-
-
-
-		//=========================== COMMENTS FORM
-
-		$params_form = array(
-		  'id_form'           => 'commentform',
-		  'id_submit'         => 'submit',
-		  'title_reply'       => '',
-		  'title_reply_to'    => '',
-		  'cancel_reply_link' => '',
-		  'label_submit'      => __( 'Post' ),
-		  'comment_field' =>  '<p class="comment-form-comment"><label for="comment">Comment</label><br><textarea id="comment" name="comment" cols="40" rows="2" aria-required="true"></textarea></p>',
-		  'must_log_in' => '',
-		  'logged_in_as' => '',
-		  'comment_notes_before' => '',
-		  'comment_notes_after' => '',
-		  'fields' => apply_filters( 'comment_form_default_fields', array(
-
-		    'author' =>
-		      '<p class="comment-form-author">' .
-		      '<label for="author">' . __( 'Name', 'domainreference' ) . '</label>' .
-		      ( $req ? '<span class="required">*</span>' : '' ) .
-		      '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-		      '" size="30"' . $aria_req . ' /></p>',
-
-		    'email' =>
-		      '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label>' .
-		      ( $req ? '<span class="required">*</span>' : '' ) .
-		      '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-		      '" size="30"' . $aria_req . ' /></p>',
-
-		    'url' =>
-		      '<p class="comment-form-url"><label for="url">' .
-		      __( 'Website', 'domainreference' ) . '</label>' .
-		      '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
-		      '" size="30" /></p>'
-		    )
-		  )
-		);
-		comment_form($params_form);
+			echo "\n\n\n\n\n";
 
 
 
-    }//-endwhile have_posts
+			//=========================== COMMENTS FORM
 
-}//-endif have_posts
+			$params_form = array(
+			  'id_form'           => 'commentform',
+			  'id_submit'         => 'submit',
+			  'title_reply'       => '',
+			  'title_reply_to'    => '',
+			  'cancel_reply_link' => '',
+			  'label_submit'      => __( 'Post' ),
+			  'comment_field' =>  '<p class="comment-form-comment"><label for="comment">Comment</label><br><textarea id="comment" name="comment" cols="40" rows="2" aria-required="true"></textarea></p>',
+			  'must_log_in' => '',
+			  'logged_in_as' => '',
+			  'comment_notes_before' => '',
+			  'comment_notes_after' => '',
+			  'fields' => apply_filters( 'comment_form_default_fields', array(
+
+			    'author' =>
+			      '<p class="comment-form-author">' .
+			      '<label for="author">' . __( 'Name', 'domainreference' ) . '</label>' .
+			      ( $req ? '<span class="required">*</span>' : '' ) .
+			      '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+			      '" size="30"' . $aria_req . ' /></p>',
+
+			    'email' =>
+			      '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label>' .
+			      ( $req ? '<span class="required">*</span>' : '' ) .
+			      '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+			      '" size="30"' . $aria_req . ' /></p>',
+
+			    'url' =>
+			      '<p class="comment-form-url"><label for="url">' .
+			      __( 'Website', 'domainreference' ) . '</label>' .
+			      '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+			      '" size="30" /></p>'
+			    )
+			  )
+			);
+			comment_form($params_form);
+			*/
 
 
-?>
+
+	    }//-endwhile have_posts
+
+	}//-endif have_posts
+
+
+	?>
+
+			</div>
+
+
+
+
+
+
+			<div class="col-sm-5 blog-side">
+				<?php get_template_part( 'home', 'blog-side'); ?>
+			</div>
+
+
+
+
+
+
 
 		</div>
+
 	</div>
 
 </div>
@@ -170,7 +194,12 @@ if (have_posts()){
 
 
 
-<?php get_footer(); ?>
+<?php
+
+get_template_part( 'page', 'footer' ); 
+get_footer(); 
+
+?>
 
 
 

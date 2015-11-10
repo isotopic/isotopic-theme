@@ -1,6 +1,8 @@
 <?php
 
 
+define('WP_HOME','http://www.isotopic.com.br');
+define('WP_SITEURL','http://www.isotopic.com.br/wordpress');
 
 /* 
 ============================================================================================================

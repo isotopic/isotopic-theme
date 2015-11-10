@@ -60,7 +60,7 @@ get_template_part( 'page', 'header' );
 								<h5>experiência</h5> <p>Mais de 10 anos de experiência desenvolvendo projetos para clientes como Abn Amro, Levis, Natura, Mizuno, Johnsons, Hasbro, Brasil Kirin, Cacaushow, Grupo 3 Corações, entre outros.</p>
 							</div>							
 							<div class="about-info-content-item">
-								<h5>educação</h5> <p>Publicidade e propaganda - ECA-USP incompleto. Sistemas de informação - EACH-USP incompleto. Tentei negociar e obter um diploma com as duas metades, mas não aceitaram :c</p>
+								<h5>educação</h5> <p>Publicidade e propaganda na ECA-USP incompleto e Sistemas de informação na EACH-USP incompleto. Seria legal se me dessem um diploma feito com as duas metades, mas não foi possível.</p>
 							</div>
 							<div class="about-info-content-item">
 								<h5>objetivos</h5> <p>Participar de projetos surpreendentes, que sejam tão funcionais quanto divertidos.</p>
@@ -96,9 +96,9 @@ get_template_part( 'page', 'header' );
 						<p> Protótipos e projetos de interação para interfaces como websites, web apps, games e dashboards, além de interfaces low level como microcontroladores e linha de comando.</p>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about2.png"> Frontend Development</h4>
-						<p> Utilizo ou já utilizei PixiJS, Three.js, Chart.js, D3, svg via js, Angular, Sass e Gulp. Tenho experiência na integração entre sistemas através de APIs REST ou SOAP. 
-							Tenho experiência na produção, publicação e manutenção de apps nativos Android e iOS através de Phonegap. Gosto de desenvolver interfaces complexas que envolvam por ex. geometria.
-							Tenho boas noções de diagramação, tipografia, fotografia e <a href="http://www.camiseteria.com/profile.aspx?usr=gu1lh3rme" target="_blank">ilustração</a>.
+						<p> Utilizo ou já utilizei PixiJS, Three.js, Chart.js, D3, svg animation, Angular, Sass e Gulp. Tenho experiência na integração entre sistemas através de APIs REST ou SOAP. 
+							Tenho experiência na produção, publicação e manutenção de apps nativos Android e iOS através de Phonegap. Tenho experiência com actionscript 2/3. Gosto de desenvolver interfaces complexas que envolvam por ex. geometria.
+							Tenho boas noções de diagramação, tipografia, fotografia e <a href="http://www.camiseteria.com/estampasaprovadas.aspx?usr=gu1lh3rme" target="_blank">ilustração</a>.
 						</p>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about3.png"> Backend Development</h4>
@@ -144,7 +144,7 @@ get_template_part( 'page', 'header' );
 								<div class="about-timeline-fact about-timeline-fact-education">
 									<h5><div>2003 <span>mar</span></div>Publicidade e Propaganda</h5>
 									<p>
-										Buscando uma formação generalista na área de comunicação e web design, iniciei o curso de Publicidade e Propaganda na ECA-USP no período matutino.
+										Buscando uma formação generalista na área de comunicação digital, iniciei o curso de Publicidade e Propaganda na ECA-USP no período matutino.
 									</p>
 								</div>
 

@@ -79,7 +79,7 @@ body{
 */
 
 
-header{
+header#main{
     display:block;
     position:fixed;
     width: 100%;
@@ -92,7 +92,7 @@ header{
 }
 
 
-    header > .container{
+    header#main > .container{
       height:100%;
       padding-left:3px;
     }
@@ -150,10 +150,10 @@ header{
 
 
 @media screen and (max-width: 580px) {
-    header{
+    header#main{
          height:50px;
     }
-       header > .container{
+       header#main > .container{
       height:100%;
       padding-left:10px;
     }
@@ -178,7 +178,7 @@ header{
      .main-menu ul li:last-child{
         border-right:none;
       }
-      header .container{
+      header#main .container{
         padding-left:10px;
       }
     }
@@ -775,6 +775,9 @@ color:#333;
 
 .project-detail-description{
   margin-top:15px;
+  font-size:16px;
+  line-height: 22px;
+  color:#888;
 }
 
 
@@ -885,7 +888,8 @@ color:#333;
 }
 
 .blog-list p{
-  font-size:16px;
+  font-size:18px;
+  font-weight: 300;
 }
 
 .blog-list .custom-post-image{
@@ -978,15 +982,47 @@ color:#333;
 }
 
 
-.blog-post-content p{
-font-size: 16px;
+
+
+
+
+
+
+
+
+
+.blog-post{
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.blog-post header h2{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom:10px;
+}
+.blog-post header p{
+    color:#888;
+}
+.blog-post p{
+  margin-top:15px;
+  margin-bottom:15px;
+  font-size: 18px;
+}
+
+.blog-post article img{
+  margin-top:30px;
+  margin-bottom:30px;
 }
 
 
 
 
+@media screen and (max-width: 768px) {
+  .blog-post header h2{
+      font-size: 30px;
+  }
 
-
+}
 
 
 
@@ -1097,6 +1133,8 @@ font-size: 16px;
   padding-left:35px;
   background-repeat: no-repeat;
   background-position: left top;
+  color:#888;
+  font-size: 16px;
 }
 
 .about-timeline-fact img{
@@ -1133,7 +1171,7 @@ font-size: 16px;
   clear:both;
   margin:8px 0 15px 5px;
   padding-right:5px;
-  line-height: 16px;
+  line-height: 20px;
 }
 
 
@@ -1272,10 +1310,10 @@ font-size: 16px;
   color:#888;
   display:block;
   float:left;
-  width:60%;
-  font-size:14px;
+  width:65%;
+  font-size:16px;
   padding:0;
-  line-height:16px;
+  line-height:20px;
   margin:0 0 15px 12px;
 }
 
@@ -1359,6 +1397,7 @@ font-size: 16px;
 
 
 .about-skills p{
+  font-size:16px;
   display:inline-block;
   width:75%;
   color:#888;
@@ -1582,12 +1621,12 @@ body{
 
 .page-footer-frontpage h4{
   /*color:#fff;*/
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
 }
 .page-footer-frontpage a{
   /*color:rgba(255,255,255,0.6);*/
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
