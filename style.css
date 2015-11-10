@@ -894,6 +894,9 @@ color:#333;
 
 .blog-list .custom-post-image{
   /*opacity: 0.3;*/
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 
 
