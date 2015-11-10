@@ -58,9 +58,9 @@ get_template_part( 'page', 'header' );
 							</div>
 							<div class="about-info-content-item">
 								<h5>experiência</h5> <p>Mais de 10 anos de experiência desenvolvendo projetos para clientes como Abn Amro, Levis, Natura, Mizuno, Johnsons, Hasbro, Brasil Kirin, Cacaushow, Grupo 3 Corações, entre outros.</p>
-							</div>							
+							</div>
 							<div class="about-info-content-item">
-								<h5>educação</h5> <p>Publicidade e propaganda na ECA-USP incompleto e Sistemas de informação na EACH-USP incompleto. Seria legal se me dessem um diploma feito com as duas metades, mas não foi possível.</p>
+								<h5>educação</h5> <p>Publicidade e Propaganda na ECA-USP e Sistemas de informação na EACH-USP, incompleto. Seria legal se me dessem um diploma feito com as duas metades, mas não foi possível.</p>
 							</div>
 							<div class="about-info-content-item">
 								<h5>objetivos</h5> <p>Participar de projetos surpreendentes, que sejam tão funcionais quanto divertidos.</p>
@@ -96,7 +96,7 @@ get_template_part( 'page', 'header' );
 						<p> Protótipos e projetos de interação para interfaces como websites, web apps, games e dashboards, além de interfaces low level como microcontroladores e linha de comando.</p>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about2.png"> Frontend Development</h4>
-						<p> Utilizo ou já utilizei PixiJS, Three.js, Chart.js, D3, svg animation, Angular, Sass e Gulp. Tenho experiência na integração entre sistemas através de APIs REST ou SOAP. 
+						<p> Utilizo ou já utilizei PixiJS, Three.js, Chart.js, D3, svg animation, Angular, Sass e Gulp. Tenho experiência na integração entre sistemas através de APIs REST ou SOAP.
 							Tenho experiência na produção, publicação e manutenção de apps nativos Android e iOS através de Phonegap. Tenho experiência com actionscript 2/3. Gosto de desenvolver interfaces complexas que envolvam por ex. geometria.
 							Tenho boas noções de diagramação, tipografia, fotografia e <a href="http://www.camiseteria.com/estampasaprovadas.aspx?usr=gu1lh3rme" target="_blank">ilustração</a>.
 						</p>
@@ -131,7 +131,7 @@ get_template_part( 'page', 'header' );
 								<div class="about-timeline-fact about-timeline-fact-work">
 									<h5> <div>2002 <span>jan</span></div> Era uma vez</h5>
 									<p>
-										No início de 2002 publiquei a primeira versão do Isotopic — 
+										No início de 2002 publiquei a primeira versão do Isotopic —
 										na época um blog pessoal sobre design e programação —  criado para estudar técnicas e conhecer pessoas com o mesmo interesse.
 										Apesar de não ter mais acesso ftp, ele <a href="http://isotopic.com.sapo.pt/v1/index.html" target="_blank">continua no ar</a> até hoje.
 									</p>
@@ -164,7 +164,7 @@ get_template_part( 'page', 'header' );
 									<h5> <div>2005 <span>jun</span></div> Agências</h5>
 									<p>
 										Já atuando exclusivamente em programação, me especializei em actionscript e em tecnologias server side como PHP e MySQL,
-										e posteriormente nas principais libraries e frameworks javascript utilizadas atualmente em desenvolvimento frontend. 
+										e posteriormente nas principais libraries e frameworks javascript utilizadas atualmente em desenvolvimento frontend.
 									</p>
 
 								</div>
