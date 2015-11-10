@@ -893,7 +893,7 @@ color:#333;
 }
 
 .blog-list .custom-post-image{
-  opacity: 0.3;
+  /*opacity: 0.3;*/
 }
 
 
@@ -951,7 +951,7 @@ color:#333;
 .blog-pagination > div{
   padding-left: 0px;
    padding-right: 0px;
-  
+
 }
 
 .tag-pill{
