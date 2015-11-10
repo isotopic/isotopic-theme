@@ -44,8 +44,8 @@ if ( $types){
  }
 
 
-if ( $services){ 
-	foreach($services as $service){ 
+if ( $services){
+	foreach($services as $service){
 		array_push( $service_name, $service->name);
 		//apenas o services permite mais de um
 		$service_slug .= ( $service_slug!=""?",":''). $service->slug;
@@ -73,7 +73,7 @@ $images =& get_children( array (
 if ( !empty($images) ){
 	foreach ( $images as $attachment_id => $attachment ) {
 		$img =  wp_get_attachment_image_src( $attachment_id, 'large' );
-		$img[0] = ( getimagesize($img[0]) ? $img[0] : get_template_directory_uri().'/img/default/700x500.jpg');
+		//$img[0] = ( getimagesize($img[0]) ? $img[0] : get_template_directory_uri().'/img/default/700x500.jpg');
 		array_push($images_src, $img[0]);
 	}
 }
@@ -91,7 +91,7 @@ if ( !empty($images) ){
 
 			<div class="col-xs-4 text-left" >
 				<a href="<?php echo home_url();?>/projects">
-					<div class="toolbar-pill"> 
+					<div class="toolbar-pill">
 					<svg style="margin:0 0 -1px 0;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="10" height="16">
 					    <path d="M6,5 L2,10 L6,15" style="stroke:#999; fill:none;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3"/>
 					</svg>
@@ -123,7 +123,7 @@ if ( !empty($images) ){
 
 				<div class="col-xs-12">
 					<h2><?php echo $title;?></h2>
-				</div>				
+				</div>
 
 				<div class="col-xs-4">
 					<p class="project-detail-specs"><span>Type</span> <?php echo $type_name;?></p>
@@ -161,8 +161,8 @@ if ( !empty($images) ){
 
 			<div class="col-sm-7  text-right ">
 				<div class="row">
-				<?php 
-				foreach($images_src as $img){ 
+				<?php
+				foreach($images_src as $img){
 
 				 if (strpos($img, '_mobile_')!==false){
 				 	echo '<div class="col-xs-6">';
@@ -191,7 +191,7 @@ if ( !empty($images) ){
 
 		</div><!-- /row -->
 	</div><!-- /container -->
-	
+
 </div><!-- /projects-detail -->
 
 
@@ -205,7 +205,7 @@ if ( !empty($images) ){
 
 <?php
 
-get_template_part( 'page', 'footer' ); 
-get_footer(); 
+get_template_part( 'page', 'footer' );
+get_footer();
 
 ?>
