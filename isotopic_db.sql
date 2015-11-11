@@ -1,5 +1,6 @@
 
 
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -110,8 +111,8 @@ LOCK TABLES `wp_options` WRITE;
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`)
 VALUES
-	(1,'siteurl','http://192.168.0.14/isotopic/wordpress','yes'),
-	(2,'home','http://192.168.0.14/isotopic','yes'),
+	(1,'siteurl','http://localhost/guilhermecruz/wordpress','yes'),
+	(2,'home','http://localhost/guilhermecruz','yes'),
 	(3,'blogname','Isotopic','yes'),
 	(4,'blogdescription','Put the pieces together and make your path','yes'),
 	(5,'users_can_register','0','yes'),
@@ -205,7 +206,7 @@ VALUES
 	(94,'widget_meta','a:2:{i:2;a:1:{s:5:\"title\";s:0:\"\";}s:12:\"_multiwidget\";i:1;}','yes'),
 	(95,'sidebars_widgets','a:3:{s:19:\"wp_inactive_widgets\";a:0:{}s:18:\"orphaned_widgets_1\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:13:\"array_version\";i:3;}','yes'),
 	(96,'cron','a:5:{i:1447305621;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1447312080;a:1:{s:20:\"wp_maybe_auto_update\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1447348839;a:1:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1447350495;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}','yes'),
-	(105,'_transient_random_seed','3b5f0e649c1f49f8f84585099ff6600e','yes'),
+	(105,'_transient_random_seed','4780b03cf00058f99126644ed4ef65d2','yes'),
 	(106,'auth_key','z-8%X:6HPr%6o~^HLt$gB1[BMX{T`+a]Dv%4tlP~My})t_boT$j*9{C7rAzMqI1N','yes'),
 	(107,'auth_salt','[/F`N`Fd3PZ}t%hfim_L(kk]_!lgE*x}TUEhtX0J&^RVLuS`GBLJj^-pV49/(&)j','yes'),
 	(108,'logged_in_key','e_hq9KTi^gVFr5~w}UWts;SSX~pTg&IX6(N+KBP/2[FF/$hwD!1-6yEXK{CPm}0n','yes'),
@@ -289,10 +290,10 @@ LOCK TABLES `wp_postmeta` WRITE;
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`)
 VALUES
 	(1,2,'_wp_page_template','default'),
-	(2,1,'_edit_lock','1446941351:1'),
+	(2,1,'_edit_lock','1447279427:1'),
 	(3,1,'_edit_last','1'),
 	(8,7,'_edit_last','1'),
-	(9,7,'_edit_lock','1418325681:1'),
+	(9,7,'_edit_lock','1447279266:1'),
 	(20,2,'_edit_lock','1447276136:1'),
 	(21,2,'_edit_last','1'),
 	(22,10,'_edit_last','1'),
@@ -343,7 +344,7 @@ VALUES
 	(278,113,'_edit_lock','1447269675:1'),
 	(279,113,'_wp_page_template','page-project-detail.php'),
 	(289,122,'_edit_last','1'),
-	(290,122,'_edit_lock','1447272522:1'),
+	(290,122,'_edit_lock','1447279235:1'),
 	(291,12,'_wp_page_template','default'),
 	(292,10,'_wp_page_template','default'),
 	(293,137,'_wp_attached_file','2015/05/pteridofitas.jpg'),
@@ -402,9 +403,9 @@ LOCK TABLES `wp_posts` WRITE;
 
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`)
 VALUES
-	(1,1,'2014-12-11 17:20:18','2014-12-11 17:20:18','This is the content of the post.','This is some post.','','publish','open','open','','hello-world','','','2014-12-11 18:56:40','2014-12-11 18:56:40','',0,'http://localhost/isotopic/wordpress/?p=1',0,'post','',1),
+	(1,1,'2014-12-11 17:20:18','2014-12-11 17:20:18','This is the content of the post.','This is some post.','Excerpt for the first post.','publish','open','open','','hello-world','','','2015-11-11 19:03:46','2015-11-11 22:03:46','',0,'http://localhost/isotopic/wordpress/?p=1',0,'post','',1),
 	(2,1,'2014-12-11 17:20:18','2014-12-11 17:20:18','This is the About page.','About','','publish','open','closed','','about','','','2015-11-11 18:09:55','2015-11-11 21:09:55','',0,'http://localhost/isotopic/wordpress/?page_id=2',1,'page','',0),
-	(7,1,'2014-12-11 18:55:00','2014-12-11 18:55:00','Second post\'s content.','And this one is a second post.','','publish','open','open','','and-this-one-is-a-second-post','','','2014-12-11 18:57:02','2014-12-11 18:57:02','',0,'http://localhost/isotopic/?p=7',0,'post','',0),
+	(7,1,'2014-12-11 18:55:00','2014-12-11 18:55:00','Second post\'s content.','And this one is a second post.','Another excerpt.','publish','open','open','','and-this-one-is-a-second-post','','','2015-11-11 19:03:21','2015-11-11 22:03:21','',0,'http://localhost/isotopic/?p=7',0,'post','',0),
 	(10,1,'2014-12-11 18:58:05','2014-12-11 21:58:05','This is the contact page.','Contact','','publish','open','closed','','contact','','','2015-11-07 21:10:12','2015-11-08 00:10:12','',0,'http://localhost/isotopic/?page_id=10',4,'page','',0),
 	(12,1,'2014-12-11 18:59:04','2014-12-11 18:59:04','Parent page for all sample works.','Projects','','publish','open','closed','','projects','','','2015-11-07 21:09:45','2015-11-08 00:09:45','',0,'http://localhost/isotopic/?page_id=12',2,'page','',0),
 	(18,1,'2014-12-11 19:14:56','2014-12-11 19:14:56','This is the blog home.','Blog','','publish','open','closed','','blog','','','2015-11-07 21:10:02','2015-11-08 00:10:02','',0,'http://localhost/isotopic/?page_id=18',3,'page','',0),
@@ -414,10 +415,9 @@ VALUES
 	(41,1,'2015-04-07 22:14:38','2015-04-08 01:14:38',' ','','','publish','open','closed','','41','','','2015-11-02 10:52:08','2015-11-02 13:52:08','',0,'http://localhost/isotopic/?p=41',4,'nav_menu_item','',0),
 	(42,1,'2015-04-07 22:14:37','2015-04-08 01:14:37',' ','','','publish','open','closed','','42','','','2015-11-02 10:52:08','2015-11-02 13:52:08','',0,'http://localhost/isotopic/?p=42',1,'nav_menu_item','',0),
 	(113,1,'2015-05-14 15:03:53','2015-05-14 18:03:53','As imagens de desktop devem ter 700x500, e as imagens de mobile devem ter 360 × 640. As imagens de mobile devem ser nomeadas com um \"_mobile_\" pra que seja aplicada a classe específica de janelinha estreita.\r\n\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\r\n\r\nObs.: Liberar a opção wp_autop.','Some Work','','publish','open','open','','some-work','','','2015-10-30 22:21:29','2015-10-31 01:21:29','',12,'http://localhost/isotopic/?page_id=113',0,'page','',0),
-	(122,1,'2015-05-14 22:17:40','2015-05-15 01:17:40','Third posts are always great.','The third post','','publish','open','open','','the-rule-of-thirds','','','2015-11-07 21:10:53','2015-11-08 00:10:53','',0,'http://localhost/isotopic/?p=122',0,'post','',0),
+	(122,1,'2015-05-14 22:17:40','2015-05-15 01:17:40','Content for this post.','The third post','Excerpt for this post.','publish','open','open','','the-rule-of-thirds','','','2015-11-11 19:02:52','2015-11-11 22:02:52','',0,'http://localhost/isotopic/?p=122',0,'post','',0),
 	(137,1,'2015-10-30 22:20:05','2015-10-31 01:20:05','','pteridofitas','','inherit','open','closed','','pteridofitas','','','2015-10-30 22:20:05','2015-10-31 01:20:05','',113,'http://192.168.0.14/isotopic/wordpress/wp-content/uploads/2015/05/pteridofitas.jpg',0,'attachment','image/jpeg',0),
 	(145,1,'2015-11-07 11:55:05','0000-00-00 00:00:00','','Auto Draft','','auto-draft','open','open','','','','','2015-11-07 11:55:05','0000-00-00 00:00:00','',0,'http://192.168.0.14/isotopic/?p=145',0,'post','',0),
-	(146,1,'2015-11-11 16:49:16','2015-11-11 19:49:16','This is the About page.','About','','inherit','closed','closed','','2-revision-v1','','','2015-11-11 16:49:16','2015-11-11 19:49:16','',2,'http://192.168.0.14/isotopic/blog/2-revision-v1/',0,'revision','',0),
 	(147,1,'2015-11-11 17:23:09','0000-00-00 00:00:00','','Auto Draft','','auto-draft','closed','closed','','','','','2015-11-11 17:23:09','0000-00-00 00:00:00','',0,'http://192.168.0.14/isotopic/?page_id=147',0,'page','',0);
 
 /*!40000 ALTER TABLE `wp_posts` ENABLE KEYS */;
@@ -622,7 +622,7 @@ VALUES
 	(11,1,'wp_user_level','10'),
 	(12,1,'dismissed_wp_pointers','wp350_media,wp360_revisions,wp360_locks,wp390_widgets,wp410_dfw'),
 	(13,1,'show_welcome_panel','1'),
-	(14,1,'session_tokens','a:4:{s:64:\"035e952c2f055bb1b2e7dafee9140c344294c118135058888e62fa6b21aa7d33\";a:4:{s:10:\"expiration\";i:1447463384;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/41.0\";s:5:\"login\";i:1446253784;}s:64:\"09efb1606b435e5b9247b5fd61bcdc04f434748aa372f87930e191c5f22ba809\";a:4:{s:10:\"expiration\";i:1448150249;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1446940649;}s:64:\"4991aef4e2b5e9bb0cfb65c0b8c043049757e6f3e95122f6b95b4b98a8809227\";a:4:{s:10:\"expiration\";i:1448150453;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1446940853;}s:64:\"019f5c07da21d45a70f0b575a636821278391ece78c8f064b3227a1d5db5c235\";a:4:{s:10:\"expiration\";i:1448462984;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1447253384;}}'),
+	(14,1,'session_tokens','a:6:{s:64:\"035e952c2f055bb1b2e7dafee9140c344294c118135058888e62fa6b21aa7d33\";a:4:{s:10:\"expiration\";i:1447463384;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/41.0\";s:5:\"login\";i:1446253784;}s:64:\"09efb1606b435e5b9247b5fd61bcdc04f434748aa372f87930e191c5f22ba809\";a:4:{s:10:\"expiration\";i:1448150249;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1446940649;}s:64:\"4991aef4e2b5e9bb0cfb65c0b8c043049757e6f3e95122f6b95b4b98a8809227\";a:4:{s:10:\"expiration\";i:1448150453;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1446940853;}s:64:\"019f5c07da21d45a70f0b575a636821278391ece78c8f064b3227a1d5db5c235\";a:4:{s:10:\"expiration\";i:1448462984;s:2:\"ip\";s:12:\"192.168.0.14\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1447253384;}s:64:\"dace4e6aafbebdc4f0b9db701f7bc0d952f2ac8312a0844cd1d54073a6840274\";a:4:{s:10:\"expiration\";i:1448488824;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1447279224;}s:64:\"8ae3fbb12ef3cc6b10d227b86def7973df0efe44ac9dd64c13d1b782086ac6b2\";a:4:{s:10:\"expiration\";i:1448488876;s:2:\"ip\";s:3:\"::1\";s:2:\"ua\";s:82:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0\";s:5:\"login\";i:1447279276;}}'),
 	(15,1,'wp_dashboard_quick_press_last_post_id','145'),
 	(16,1,'wp_user-settings','editor=html&libraryContent=browse&urlbutton=file&imgsize=full&editor_expand=on'),
 	(17,1,'wp_user-settings-time','1447269323'),
@@ -633,7 +633,9 @@ VALUES
 	(22,1,'managenav-menuscolumnshidden','a:4:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";}'),
 	(23,1,'metaboxhidden_nav-menus','a:2:{i:0;s:8:\"add-post\";i:1;s:12:\"add-post_tag\";}'),
 	(24,1,'wp_media_library_mode','grid'),
-	(25,1,'nav_menu_recently_edited','8');
+	(25,1,'nav_menu_recently_edited','8'),
+	(26,1,'closedpostboxes_post','a:1:{i:0;s:12:\"revisionsdiv\";}'),
+	(27,1,'metaboxhidden_post','a:6:{i:0;s:13:\"trackbacksdiv\";i:1;s:10:\"postcustom\";i:2;s:16:\"commentstatusdiv\";i:3;s:11:\"commentsdiv\";i:4;s:7:\"slugdiv\";i:5;s:9:\"authordiv\";}');
 
 /*!40000 ALTER TABLE `wp_usermeta` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -665,7 +667,7 @@ LOCK TABLES `wp_users` WRITE;
 
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`)
 VALUES
-	(1,'hello','$P$BePm7i4N3taYJin/4kSDi6RuGNerEV.','hello','guilhermecruz@gmail.com','','2014-12-11 17:20:18','',0,'hello');
+	(1,'hello','$P$BkJPoqgJadFMLMDB/GW9sxJm7t5vRi.','hello','guilhermecruz@gmail.com','','2014-12-11 17:20:18','',0,'hello');
 
 /*!40000 ALTER TABLE `wp_users` ENABLE KEYS */;
 UNLOCK TABLES;
