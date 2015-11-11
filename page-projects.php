@@ -151,9 +151,7 @@ get_template_part( 'page', 'header' );
 			$title = get_the_title($project->ID);
 			$link = get_page_link( $project->ID);
 			$img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $project->ID ), 'large' );
-			if (!file_exists($img_url[0])) {
-				$img_url[0] = get_template_directory_uri().'/img/default/700x500.jpg';
-			}
+			//if (!file_exists($img_url[0])) { $img_url[0] = get_template_directory_uri().'/img/default/700x500.jpg'; }
 			$type_name = "&nbsp;";        $type_slug = "";
 			$service_name = "&nbsp;";  $service_slug = "";
 			$client_name = "&nbsp;";     $client_slug = "";
