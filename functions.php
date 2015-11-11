@@ -180,11 +180,14 @@ UTILS
 
 //gera links na front-page
 function getPostBasic($_id){
+	if ($_id==false){
+		return '<a href="#"><p>Title<span>Subtitle</span></p></a>';
+	}
 	$about = get_post($_id);
 	$title = $about->post_title;
 	$slug = $about->post_name;
 	$subtitle = get_post_meta($_id, 'post_subtitle', true);
-	echo '<a href="'.$slug.'"><p>'. $title . '<span>' . $subtitle. '</span></p></a>';
+	return '<a href="'.$slug.'"><p>'. $title . '<span>' . $subtitle. '</span></p></a>';
 }
 
 
@@ -197,8 +200,10 @@ function getIdBySlug($_slug){
 	  'numberposts' => 1
 	);
 	$my_posts = get_posts($args);
-	if( $my_posts ) {
-	  return $my_posts[0]->ID;
+	if( count($my_posts)>0 ) {
+		return $my_posts[0]->ID;
+	}else{
+		return false;
 	}
 }
 
