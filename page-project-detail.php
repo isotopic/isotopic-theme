@@ -73,7 +73,9 @@ $images =& get_children( array (
 if ( !empty($images) ){
 	foreach ( $images as $attachment_id => $attachment ) {
 		$img =  wp_get_attachment_image_src( $attachment_id, 'large' );
-		//$img[0] = ( getimagesize($img[0]) ? $img[0] : get_template_directory_uri().'/img/default/700x500.jpg');
+		if (!file_exists($img[0])) {
+			$img[0] = get_template_directory_uri().'/img/default/700x500.jpg';
+		}
 		array_push($images_src, $img[0]);
 	}
 }
