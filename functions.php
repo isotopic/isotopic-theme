@@ -173,6 +173,31 @@ add_filter( 'the_password_form', 'my_password_form' );
 
 
 
+
+
+
+//http://jeremyhixon.com/tool/wordpress-meta-box-generator/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 UTILS
 */
@@ -206,6 +231,23 @@ function getIdBySlug($_slug){
 		return false;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -202,11 +202,11 @@ var IsotopicHome = (function($){
 
 
         //Itens do DOM para serem animados
-        sprites['home_intro'] = document.getElementById("home_intro");
-        sprites['item_about'] = document.getElementById("item_about");
-        sprites['item_projects'] = document.getElementById("item_projects");
-        sprites['item_blog'] = document.getElementById("item_blog");
-        sprites['item_contact'] = document.getElementById("item_contact");
+        sprites['home_intro'] = document.getElementById("home_intro") || {'style':{}};
+        sprites['item_about'] = document.getElementById("item_about") || {'style':{}};
+        sprites['item_projects'] = document.getElementById("item_projects") || {'style':{}};
+        sprites['item_blog'] = document.getElementById("item_blog") || {'style':{}};
+        sprites['item_contact'] = document.getElementById("item_contact") || {'style':{}};
 
         sprites['home_intro'].timeline =
                 [{ key:0.0,    x:null,  y:-200,   alpha:1},

@@ -4,12 +4,11 @@
 
 
 <?php
-
+//The front-page will look only for these 4 slugs
 $about_id = getIdBySlug('about');
 $projects_id = getIdBySlug('projects');
 $blog_id = getIdBySlug('blog');
 $contact_id = getIdBySlug('contact');
-
 ?>
 
 
@@ -33,7 +32,7 @@ $contact_id = getIdBySlug('contact');
 				<path display="inline" fill-rule="evenodd" clip-rule="evenodd" fill="#2B3A42" d="M37.509,9.85c3.867,3.867,5.8,8.534,5.8,14 c0,5.434-1.933,10.067-5.8,13.9c-3.867,3.867-8.517,5.8-13.95,5.8s-10.083-1.933-13.95-5.8c-3.833-3.833-5.75-8.467-5.75-13.9 c0-5.466,1.917-10.133,5.75-14c3.867-3.833,8.517-5.75,13.95-5.75S33.642,6.017,37.509,9.85z M25.108,11.15 c0-0.5-0.167-0.9-0.5-1.2c-0.267-0.233-0.617-0.35-1.05-0.35c-0.433-0.033-0.783,0.083-1.05,0.35c-0.367,0.267-0.55,0.65-0.55,1.15 v8.6l-11.75,7.2v3.15l11.9-3.9v6.35l-2.75,2.2v2.55l4.3-1.35l4.25,1.35V34.7l-2.75-2.2v-6.35l11.95,3.9V26.9l-12-7.2V11.15z"/>
 			</g>
 		</svg>
-		<?php  echo getPostBasic($about_id); ?>
+		<?php  echo getPostBasic( $about_id ); ?>
 	</div>
 	<div class="home-item " id="item_projects">
 		<svg xmlns="http://www.w3.org/2000/svg"  class="home-item-icon" width="60" height="60"  xmlns:xlink="http://www.w3.org/1999/xlink">
