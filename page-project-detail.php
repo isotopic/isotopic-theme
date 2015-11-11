@@ -73,7 +73,7 @@ $images =& get_children( array (
 if ( !empty($images) ){
 	foreach ( $images as $attachment_id => $attachment ) {
 		$img =  wp_get_attachment_image_src( $attachment_id, 'large' );
-		//if (!file_exists($img[0])) { $img[0] = get_template_directory_uri().'/img/default/700x500.jpg'; }
+		$default_error_image = get_template_directory_uri().'/img/default/700x500.jpg';
 		array_push($images_src, $img[0]);
 	}
 }
@@ -183,7 +183,7 @@ if ( !empty($images) ){
 						        <use xlink:href="#bt-bolinha" x="26" y="0" />
 					    </svg>
 
-					<img src="<?php echo $img;?>" class="">
+					<img src="<?php echo $img;?>" class=""   onerror="this.src='<?php echo $default_error_image; ?>'">
 					</div>
 				</div>
 				<?php } ?>

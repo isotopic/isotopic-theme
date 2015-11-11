@@ -151,7 +151,7 @@ get_template_part( 'page', 'header' );
 			$title = get_the_title($project->ID);
 			$link = get_page_link( $project->ID);
 			$img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $project->ID ), 'large' );
-			//if (!file_exists($img_url[0])) { $img_url[0] = get_template_directory_uri().'/img/default/700x500.jpg'; }
+			$default_error_image = get_template_directory_uri().'/img/default/700x500.jpg';
 			$type_name = "&nbsp;";        $type_slug = "";
 			$service_name = "&nbsp;";  $service_slug = "";
 			$client_name = "&nbsp;";     $client_slug = "";
@@ -184,7 +184,7 @@ get_template_part( 'page', 'header' );
 
 			<div class="project-item col-xs-12 col-sm-6 col-md-3" data-type="<?php echo $type_slug;?>"  data-service="<?php echo $service_slug;?>"  data-client="<?php echo $client_slug;?>">
 				<div class="project-item-wrapper"><a href="<?php echo $link;?>">
-					<img src="<?php echo $img_url[0];?>" class="img-responsive">
+					<img src="<?php echo $img_url[0];?>" class="img-responsive"  onerror="this.src='<?php echo $default_error_image; ?>'">
 					<div class="project-item-txt">
 						<h4><?php echo $client_name;?></h4>
 						<p><span><?php echo $title;?></span><Br><?php echo $type_name;?></p>
