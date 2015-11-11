@@ -183,7 +183,7 @@ if ( !empty($images) ){
 						        <use xlink:href="#bt-bolinha" x="26" y="0" />
 					    </svg>
 
-					<img src="<?php echo $img;?>" class=""   onerror="this.src='<?php echo $default_error_image; ?>'">
+					<img src="<?php echo $img;?>" class=""   onerror="this.onerror=null;this.src='<?php echo $default_error_image; ?>'">
 					</div>
 				</div>
 				<?php } ?>

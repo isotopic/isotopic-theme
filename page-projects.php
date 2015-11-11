@@ -184,7 +184,7 @@ get_template_part( 'page', 'header' );
 
 			<div class="project-item col-xs-12 col-sm-6 col-md-3" data-type="<?php echo $type_slug;?>"  data-service="<?php echo $service_slug;?>"  data-client="<?php echo $client_slug;?>">
 				<div class="project-item-wrapper"><a href="<?php echo $link;?>">
-					<img src="<?php echo $img_url[0];?>" class="img-responsive"  onerror="this.src='<?php echo $default_error_image; ?>'">
+					<img src="<?php echo $img_url[0];?>" class="img-responsive"  onerror="this.onerror=null;this.src='<?php echo $default_error_image; ?>'">
 					<div class="project-item-txt">
 						<h4><?php echo $client_name;?></h4>
 						<p><span><?php echo $title;?></span><Br><?php echo $type_name;?></p>
