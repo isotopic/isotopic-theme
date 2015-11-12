@@ -36,7 +36,7 @@ get_template_part( 'page', 'header' );
 	<div class="container">
 		<div class="row">
 
-			<div class="col-sm-5 no-padding no-margin">
+			<div class="col-md-5 no-padding no-margin">
 
 				<div class="about-item col-sm-12">
 					<div class="about-item-wrapper about-info">
@@ -106,7 +106,7 @@ get_template_part( 'page', 'header' );
 
 
 
-			<div class="col-sm-7  no-padding no-margin">
+			<div class="col-md-7  no-padding no-margin">
 
 				<div class="about-item col-sm-12">
 					<div class="about-item-wrapper">
