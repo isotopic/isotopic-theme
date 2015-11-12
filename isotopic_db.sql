@@ -304,7 +304,7 @@ VALUES
 	(31,18,'_edit_lock','1446941259:1'),
 	(32,22,'_edit_last','1'),
 	(33,22,'_edit_lock','1447273244:1'),
-	(34,2,'post_subtitle','Subtitle original'),
+	(34,2,'post_subtitle','Subtitle'),
 	(35,12,'post_subtitle','Subtitle'),
 	(36,18,'post_subtitle','Subtitle'),
 	(37,10,'post_subtitle','Subtitle'),
@@ -353,7 +353,7 @@ VALUES
 	(296,22,'_wp_page_template','default'),
 	(300,2,'about_content_info','<div class=\"about-info-content-item\">\r\n	<h5>one</h5> <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. </p>\r\n</div>\r\n							\r\n<div class=\"about-info-content-item\">\r\n	<h5>two</h5> <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>\r\n</div>\r\n'),
 	(301,2,'about_content_skills',''),
-	(302,2,'about_content_timeline','<div class=\"about-timeline-year\">\r\n	<h4>2002</h4>\r\n</div>\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-work\">\r\n		<h5> <div>2002 <span>jan</span></div> Some fact</h5>\r\n		<p>Fact\'s description goes here</p>\r\n	</div>\r\n\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-education\">\r\n		<h5><div>2003 <span>mar</span></div>Another fact</h5>\r\n		<p>Another fact goes here</p>\r\n	</div>\r\n\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-work\">\r\n		<h5> <div>2010 <span>jun</span></div> And go on</h5>\r\n		<p>You get the idea</p>\r\n\r\n	</div>\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-work\">\r\n		<h5> <div>2015 <span>nov</span></div>Today</h5>\r\n		<p>\"It could be worse. Could be raining.\"</p>\r\n	</div>\r\n\r\n\r\n<div class=\"about-timeline-year\">\r\n	<h4>2016</h4>\r\n</div>'),
+	(302,2,'about_content_timeline','<div class=\"about-timeline-year\">\r\n	<h4>2002</h4>\r\n</div>\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-work\">\r\n		<h5> <div>2002 <span>jan</span></div> Some fact</h5>\r\n		<p>Description goes here</p>\r\n	</div>\r\n\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-education\">\r\n		<h5><div>2003 <span>mar</span></div>Some fact</h5>\r\n		<p>Description goes here</p>\r\n	</div>\r\n\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-work\">\r\n		<h5> <div>2010 <span>jun</span></div> Fact</h5>\r\n		<p>Description goes here</p>\r\n\r\n	</div>\r\n\r\n	<div class=\"about-timeline-fact about-timeline-fact-work\">\r\n		<h5> <div>2015 <span>nov</span></div>Fact</h5>\r\n		<p>\"Description goes here\"</p>\r\n	</div>\r\n\r\n\r\n<div class=\"about-timeline-year\">\r\n	<h4>2016</h4>\r\n</div>'),
 	(303,2,'about_content_skills1','<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>'),
 	(304,2,'about_content_skills2','<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Laboris nisi ut aliquip ex ea commodo consequat.</p>'),
 	(305,2,'about_content_skills3','<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>');
