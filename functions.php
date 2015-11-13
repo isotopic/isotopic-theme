@@ -4,7 +4,7 @@
 define('WP_HOME','http://www.isotopic.com.br');
 define('WP_SITEURL','http://www.isotopic.com.br/wordpress');
 */
-/* 
+/*
 ============================================================================================================
 ==================================================================================================== WP_HEAD
 ============================================================================================================
@@ -16,8 +16,8 @@ define('WP_SITEURL','http://www.isotopic.com.br/wordpress');
 function isotopic_get_styles(){
 	echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/bootstrap.min.css" type="text/css" media="all">';
 	echo "\n";
-	//echo '<link href="http://fonts.googleapis.com/css?family=Dosis:400,500,700,600,800,300" rel="stylesheet" type="text/css">';	
-	echo '<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis:300,400,500,600" type="text/css">';	
+	//echo '<link href="http://fonts.googleapis.com/css?family=Dosis:400,500,700,600,800,300" rel="stylesheet" type="text/css">';
+	echo '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis:300,400,500,600" type="text/css">';
 	echo "\n";
 	echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" type="text/css" media="all">';
 }
@@ -45,7 +45,7 @@ function register_menus() {
 add_action('init', 'register_menus');
 
 
-/* 
+/*
 ============================================================================================================
 ============================================================================================   THEME SUPPORT
 ============================================================================================================
@@ -63,7 +63,7 @@ add_theme_support( 'post-thumbnails' );
 
 
 
-/* 
+/*
 ============================================================================================================
 ===================================================================================================TAXONOMY
 ============================================================================================================
@@ -112,7 +112,7 @@ function project_taxonomies() {
 
 
 
-/* 
+/*
 ============================================================================================================
 ==================================================================================================== FILTERS
 ============================================================================================================
@@ -234,23 +234,23 @@ function about_content_html( $post) {
 	<p>
 		<label for="about_content_info"><?php _e( 'info', 'about_content' ); ?></label><br>
 		<textarea name="about_content_info" id="about_content_info" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_info' ); ?></textarea>
-	
+
 	</p>	<p>
 		<label for="about_content_skills1"><?php _e( 'skills1', 'about_content' ); ?></label><br>
 		<textarea name="about_content_skills1" id="about_content_skills1" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_skills1' ); ?></textarea>
-	
+
 	</p>	<p>
 		<label for="about_content_skills2"><?php _e( 'skills2', 'about_content' ); ?></label><br>
 		<textarea name="about_content_skills2" id="about_content_skills2" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_skills2' ); ?></textarea>
-	
+
 	</p>	<p>
 		<label for="about_content_skills3"><?php _e( 'skills3', 'about_content' ); ?></label><br>
 		<textarea name="about_content_skills3" id="about_content_skills3" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_skills3' ); ?></textarea>
-	
+
 	</p>	<p>
 		<label for="about_content_timeline"><?php _e( 'timeline', 'about_content' ); ?></label><br>
 		<textarea name="about_content_timeline" id="about_content_timeline" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_timeline' ); ?></textarea>
-	
+
 	</p><?php
 }
 
