@@ -47,7 +47,7 @@
 
 			<hr>
 			
-			<div class="col-sm-6">
+			<div class="col-md-6">
 				<?php 
 				$footerMenuConfig = array(
 					'theme_location'  => 'footerMenu',
@@ -90,7 +90,7 @@
 
 
 
-			<div class="col-sm-6 footer-icons">
+			<div class="col-md-6 footer-icons">
 				<a href="http://br.linkedin.com/in/isotopic" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png"></a>
 				<a href="https://github.com/isotopic" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/github.png"></a>
 			</div>
