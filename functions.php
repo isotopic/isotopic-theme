@@ -321,6 +321,117 @@ add_action( 'save_post', 'about_content_save' );
 
 
 
+/* Mostrar meta boxes apropriados de acordo com o conteúdo sendo editado */
+add_action( 'add_meta_boxes', 'remove_post_meta_boxes' );
+
+
+
+function remove_post_meta_boxes() {
+
+
+	if(isset($_GET['post'])) {
+		$ID = $_GET['post'];
+	}else{
+		return false;
+	}
+
+	$is_page = is_page($ID);
+
+
+	//Home
+	if(get_option('page_on_front') == $ID){
+        remove_meta_box('postcustom', 'post', 'normal');
+        remove_meta_box('postcustom', 'page', 'normal');
+        remove_meta_box('postimagediv', 'post', 'normal');
+        remove_meta_box('postimagediv', 'page', 'normal');        
+        remove_meta_box('pageparentdiv', 'post', 'normal');
+        remove_meta_box('pageparentdiv', 'page', 'normal');
+	}
+
+
+	//ABOUT
+    if( $ID != getIdBySlug('about') ) {
+        remove_meta_box('about_content-about-content', 'post', 'normal');
+        remove_meta_box('about_content-about-content', 'page', 'normal');
+    }else{
+        remove_meta_box('postcustom', 'post', 'normal');
+        remove_meta_box('postcustom', 'page', 'normal');
+    }
+
+
+
+    //ITENS DE PROJETOS
+    $projects_id = getIdBySlug('projects');
+	$ancestors =  get_post_ancestors( $ID );
+	if( count($ancestors)>0 && $ancestors[0]==$projects_id ){
+		remove_meta_box('postcustom', 'post', 'normal');
+        remove_meta_box('postcustom', 'page', 'normal');
+	}else{
+		remove_meta_box('tagsdiv-type', 'post', 'normal');
+        remove_meta_box('tagsdiv-type', 'page', 'normal');
+        remove_meta_box('tagsdiv-client', 'post', 'normal');
+        remove_meta_box('tagsdiv-client', 'page', 'normal');
+        remove_meta_box('tagsdiv-service', 'post', 'normal');
+        remove_meta_box('tagsdiv-service', 'page', 'normal');
+
+        if(!$is_post){
+			remove_meta_box('postimagediv', 'post', 'normal');
+	        remove_meta_box('postimagediv', 'page', 'normal');    
+		}
+
+	}
+
+
+
+
+
+
+
+
+	//Remover de tudo
+	remove_meta_box('commentstatusdiv', 'post', 'normal');
+	remove_meta_box('commentstatusdiv', 'page', 'normal');
+
+    remove_meta_box('slugdiv', 'post', 'normal');
+    remove_meta_box('slugdiv', 'page', 'normal');
+
+    remove_meta_box('authordiv', 'post', 'normal');
+    remove_meta_box('authordiv', 'page', 'normal');
+
+
+
+/*
+
+        remove_meta_box('tagsdiv-post_tag', 'post', 'normal');
+        remove_meta_box('categorydiv', 'post', 'normal');
+        remove_meta_box('postimagediv', 'post', 'normal');
+        remove_meta_box('authordiv', 'post', 'normal');
+        remove_meta_box('authordiv', 'page', 'normal');
+        remove_meta_box('postexcerpt', 'post', 'normal');
+        remove_meta_box('trackbacksdiv', 'post', 'normal');
+        remove_meta_box('commentstatusdiv', 'post', 'normal');
+        remove_meta_box('commentstatusdiv', 'page', 'normal');
+        remove_meta_box('postcustom', 'post', 'normal');
+        remove_meta_box('postcustom', 'page', 'normal');
+        remove_meta_box('revisionsdiv', 'post', 'normal');
+
+        remove_meta_box('postimagediv', 'post', 'normal');
+        remove_meta_box('postimagediv', 'page', 'normal');
+
+    */
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -362,6 +473,16 @@ function getIdBySlug($_slug){
 		return false;
 	}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
