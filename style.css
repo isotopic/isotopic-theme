@@ -1256,7 +1256,7 @@ color:#333;
 
 
 .about-info-header img{
-  border:5px solid #ddd;
+  border:2px solid #9DBDC6;
   width:90px;
   height:90px;
   float:left;
@@ -1443,7 +1443,10 @@ color:#333;
   font-size:18px;
 }
 .about-contact p{
-  margin:20px 0 0 0;
+  margin:5px 0 15px 0;
+}
+.about-contact p a{
+  color:#666;
 }
 
 .about-contact img{

@@ -134,11 +134,7 @@ get_template_part( 'page', 'header' );
 						<img src="<?php echo get_template_directory_uri(); ?>/img/dotmap.png" class="img-responsive" >
 						
 						<h5>Guilherme Cruz <span>São Paulo, Brasil</span></h5>
-						<p>
-							<a href="mailto:guilhermecruz@gmail.com">guilhermecruz@gmail.com</a> <br>
-							<a href="https://br.linkedin.com/in/isotopic" target="_blank">linkedin</a> <br>
-							<a href="https://github.com/isotopic" target="_blank">github</a> <br>
-						</p>
+						<p><a href="mailto:guilhermecruz@gmail.com">guilhermecruz@gmail.com</a></p>
 
 						<div class="clearfix"></div>
 
