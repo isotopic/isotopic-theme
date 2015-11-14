@@ -23,9 +23,9 @@ get_template_part( 'page', 'header' );
 
 			</div>
 
-		</div><!-- /row -->
-	</div><!-- /container -->
-</div><!-- /toolbar -->
+		</div>
+	</div>
+</div>
 
 
 
@@ -40,8 +40,9 @@ get_template_part( 'page', 'header' );
 
 				<div class="about-item col-sm-12">
 					<div class="about-item-wrapper about-info">
+
 						<h3>Info</h3>
-						<!--Foto, nome, local, função etc</p>-->
+
 
 						<div class="about-info-header">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/about-avatar.png" class="img-circle">
@@ -52,9 +53,7 @@ get_template_part( 'page', 'header' );
 						<div class="about-info-content">
 
 
-
 							<?php echo about_content_get_meta( 'about_content_info' ); ?>
-
 
 
 							<div class="about-info-social">
@@ -72,30 +71,21 @@ get_template_part( 'page', 'header' );
 
 
 
-
 				<div class="about-item col-sm-12">
 					<div class="about-item-wrapper about-skills">
 
 						<h3>Skills</h3>
 
-
-
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about1.png"> Interaction Design</h4>
-						<!--<p> Protótipos e projetos de interação para interfaces como websites, web apps, games e dashboards, além de interfaces low level como microcontroladores e linha de comando.</p>-->
+
 						<?php echo about_content_get_meta( 'about_content_skills1' ); ?>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about2.png"> Frontend Development</h4>
-						<!--<p> Utilizo ou já utilizei PixiJS, Three.js, Chart.js, D3, svg animation, Angular, Sass e Gulp. Tenho experiência na integração entre sistemas através de APIs REST ou SOAP.
-							Tenho experiência na produção, publicação e manutenção de apps nativos Android e iOS através de Phonegap. Tenho experiência com actionscript 2/3. Gosto de desenvolver interfaces complexas que envolvam por ex. geometria.
-							Tenho boas noções de diagramação, tipografia, fotografia e <a href="http://www.camiseteria.com/estampasaprovadas.aspx?usr=gu1lh3rme" target="_blank">ilustração</a>.
-						</p>-->
+
 						<?php echo about_content_get_meta( 'about_content_skills2' ); ?>
 
 						<h4><img src="<?php echo get_template_directory_uri(); ?>/img/about3.png"> Backend Development</h4>
-						<!--<p>Possuo conhecimento em Wordpress e Drupal.</p>
-						<p>Já utilizei frameworks PHP como Cake e Yii, mas atualmente os favoritos são CodeIgniter e Slim. Fiz <a href="https://s3.amazonaws.com/edu-cert.10gen.com/downloads/3c43ae47c8fe41628beecd4d48aef57d/Certificate.pdf">um curso</a> de MongoDB para NodeJS developers.
-							Tenho experiência em configuração e manutenção de servidores web linux, assim como setups de desenvolvimento local utilizando Virtual Box.
-							Gosto de automatizar tarefas através de bash scripts <a href="https://github.com/isotopic/isotopic-local" target="_blank">como este</a>.</p>-->
+
 						<?php echo about_content_get_meta( 'about_content_skills3' ); ?>
 
 					</div>
@@ -115,80 +105,9 @@ get_template_part( 'page', 'header' );
 
 						<div class="about-timeline" style="">
 
-<!--
-<div class="about-timeline-year">
-	<h4>2002</h4>
-</div>
-
-	<div class="about-timeline-fact about-timeline-fact-work">
-		<h5> <div>2002 <span>jan</span></div> Era uma vez</h5>
-		<p>
-			No início de 2002 publiquei a primeira versão do Isotopic —
-			na época um blog pessoal sobre design e programação —  criado para estudar técnicas e conhecer pessoas com o mesmo interesse.
-			Apesar de não ter mais acesso ftp, ele <a href="http://isotopic.com.sapo.pt/v1/index.html" target="_blank">continua no ar</a> até hoje.
-		</p>
-
-	</div>
-
-
-
-
-	<div class="about-timeline-fact about-timeline-fact-education">
-		<h5><div>2003 <span>mar</span></div>Publicidade e Propaganda</h5>
-		<p>
-			Buscando uma formação generalista na área de comunicação digital, iniciei o curso de Publicidade e Propaganda na ECA-USP no período matutino.
-		</p>
-	</div>
-
-
-	<div class="about-timeline-fact about-timeline-fact-work">
-		<h5> <div>2003 <span>jun</span></div> Estágios</h5>
-		<p>
-			Durante os primeiros semestres da faculdade atuava tanto na área de criação
-			quanto na programação de interfaces, utilizando principalmente html, javascript e actionscript.
-		</p>
-
-	</div>
-
-
-
-	<div class="about-timeline-fact about-timeline-fact-work">
-		<h5> <div>2005 <span>jun</span></div> Agências</h5>
-		<p>
-			Já atuando exclusivamente em programação, me especializei em actionscript e em tecnologias server side como PHP e MySQL,
-			e posteriormente nas principais libraries e frameworks javascript utilizadas atualmente em desenvolvimento frontend.
-		</p>
-
-	</div>
-
-
-	<div class="about-timeline-fact about-timeline-fact-education">
-		<h5><div>2013 <span>mar</span></div>Sistemas de Informação</h5>
-		<p>
-			Com intuito de reforçar os conhecimentos de computação, iniciei o curso de Sistemas de Informação na EACH-USP no período noturno.
-		</p>
-	</div>
-
-
-
-
-	<div class="about-timeline-fact about-timeline-fact-work">
-		<h5> <div>2015 <span>nov</span></div> Hoje</h5>
-		<p>
-			Atualmente Lead Developer na agência Íonz.
-		</p>
-
-	</div>
-
-
-<div class="about-timeline-year">
-	<h4>2016</h4>
-</div>
--->
-<?php echo about_content_get_meta( 'about_content_timeline' ); ?>
+								<?php echo about_content_get_meta( 'about_content_timeline' ); ?>
 
 						</div>
-
 
 
 					</div>
@@ -249,43 +168,6 @@ get_template_part( 'page', 'header' );
 	</div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

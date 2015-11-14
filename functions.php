@@ -411,16 +411,16 @@ function remove_post_meta_boxes() {
 
 
 	//Home
-	if(get_option('page_on_front') == $ID){
-        remove_meta_box('postcustom', 'post', 'normal');
-        remove_meta_box('postcustom', 'page', 'normal');
-        remove_meta_box('postimagediv', 'post', 'normal');
-        remove_meta_box('postimagediv', 'page', 'normal');        
-        remove_meta_box('pageparentdiv', 'post', 'normal');
-        remove_meta_box('pageparentdiv', 'page', 'normal');
-	}else{
+	if(get_option('page_on_front') != $ID){
 		remove_meta_box('home_links-home-links', 'post', 'normal');
         remove_meta_box('home_links-home-links', 'page', 'normal');
+	}else{
+		remove_meta_box('tagsdiv-type', 'post', 'side');
+        remove_meta_box('tagsdiv-type', 'page', 'side');
+        remove_meta_box('tagsdiv-client', 'post', 'side');
+        remove_meta_box('tagsdiv-client', 'page', 'side');
+        remove_meta_box('tagsdiv-service', 'post', 'side');
+        remove_meta_box('tagsdiv-service', 'page', 'side');
 	}
 
 
@@ -448,8 +448,8 @@ function remove_post_meta_boxes() {
         remove_meta_box('tagsdiv-service', 'post', 'normal');
         remove_meta_box('tagsdiv-service', 'page', 'normal');
         if(!$is_post){
-			remove_meta_box('postimagediv', 'post', 'normal');
-	        remove_meta_box('postimagediv', 'page', 'normal');    
+			remove_meta_box('postimagediv', 'post', 'advanced');
+	        remove_meta_box('postimagediv', 'page', 'advanced');    
 		}
 
 	}
@@ -467,6 +467,9 @@ function remove_post_meta_boxes() {
 
     remove_meta_box('authordiv', 'post', 'normal');
     remove_meta_box('authordiv', 'page', 'normal');
+
+    remove_meta_box('revisionsdiv', 'post', 'normal');
+    remove_meta_box('revisionsdiv', 'page', 'normal');
 
     remove_meta_box('postcustom', 'post', 'normal');
     remove_meta_box('postcustom', 'page', 'normal');
@@ -495,8 +498,6 @@ function remove_post_meta_boxes() {
 /*
 UTILS
 */
-
-
 
 
 function getIdBySlug($_slug){
