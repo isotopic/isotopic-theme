@@ -25,7 +25,7 @@ $contact_id = getIdBySlug('contact');
 	</div>
 
 
-	<div class="home-item" id="item_about">
+	<div class="home-item" id="item_airplane">
 		<svg xmlns="http://www.w3.org/2000/svg"  class="home-item-icon" width="60" height="60"  xmlns:xlink="http://www.w3.org/1999/xlink">
 			<path   id="baseicon" fill-rule="evenodd" clip-rule="evenodd" fill="#EFEFEF" d="M23.75,0c6.533,0,12.117,2.3,16.75,6.9 c4.667,4.667,7,10.283,7,16.85c0,5.6-1.7,10.483-5.1,14.65c-0.367,0.433-0.75,0.883-1.15,1.35l-13.8,16.1 c-1.034,1.034-2.267,1.55-3.7,1.55s-2.667-0.517-3.7-1.55l-13.8-16.1c-0.4-0.467-0.8-0.917-1.2-1.35C1.683,34.233,0,29.35,0,23.75 C0,17.183,2.333,11.566,7,6.9C11.6,2.3,17.183,0,23.75,0z"/>
 			<g id="airplane">
@@ -34,7 +34,7 @@ $contact_id = getIdBySlug('contact');
 		</svg>
 		<?php  echo getPostBasic( $about_id ); ?>
 	</div>
-	<div class="home-item " id="item_projects">
+	<div class="home-item " id="item_bus">
 		<svg xmlns="http://www.w3.org/2000/svg"  class="home-item-icon" width="60" height="60"  xmlns:xlink="http://www.w3.org/1999/xlink">
 			<path id="baseicon" fill-rule="evenodd" clip-rule="evenodd" fill="#EFEFEF" d="M23.75,0c6.533,0,12.117,2.3,16.75,6.9 c4.667,4.667,7,10.283,7,16.85c0,5.6-1.7,10.483-5.1,14.65c-0.367,0.433-0.75,0.883-1.15,1.35l-13.8,16.1 c-1.034,1.034-2.267,1.55-3.7,1.55s-2.667-0.517-3.7-1.55l-13.8-16.1c-0.4-0.467-0.8-0.917-1.2-1.35C1.683,34.233,0,29.35,0,23.75 C0,17.183,2.333,11.566,7,6.9C11.6,2.3,17.183,0,23.75,0z"/>
 			<g id="bus">
@@ -43,7 +43,7 @@ $contact_id = getIdBySlug('contact');
 		</svg>
 		<?php  echo getPostBasic($projects_id); ?>
 	</div>
-	<div class="home-item " id="item_blog">
+	<div class="home-item " id="item_ship">
 		<svg xmlns="http://www.w3.org/2000/svg"  class="home-item-icon" width="60" height="60"  xmlns:xlink="http://www.w3.org/1999/xlink">
 			<path id="baseicon" fill-rule="evenodd" clip-rule="evenodd" fill="#EFEFEF" d="M23.75,0c6.533,0,12.117,2.3,16.75,6.9 c4.667,4.667,7,10.283,7,16.85c0,5.6-1.7,10.483-5.1,14.65c-0.367,0.433-0.75,0.883-1.15,1.35l-13.8,16.1 c-1.034,1.034-2.267,1.55-3.7,1.55s-2.667-0.517-3.7-1.55l-13.8-16.1c-0.4-0.467-0.8-0.917-1.2-1.35C1.683,34.233,0,29.35,0,23.75 C0,17.183,2.333,11.566,7,6.9C11.6,2.3,17.183,0,23.75,0z"/>
 			<g id="ship" >
@@ -52,7 +52,7 @@ $contact_id = getIdBySlug('contact');
 		</svg>
 		<?php  echo getPostBasic($blog_id); ?>
 	</div>
-	<div class="home-item" id="item_contact">
+	<div class="home-item" id="item_train">
 		<svg style="" xmlns="http://www.w3.org/2000/svg"  class="home-item-icon" width="60" height="60"  xmlns:xlink="http://www.w3.org/1999/xlink">
 			<path  transform=""  id="baseicon" fill-rule="evenodd" clip-rule="evenodd" fill="#EFEFEF" d="M23.75,0c6.533,0,12.117,2.3,16.75,6.9 c4.667,4.667,7,10.283,7,16.85c0,5.6-1.7,10.483-5.1,14.65c-0.367,0.433-0.75,0.883-1.15,1.35l-13.8,16.1 c-1.034,1.034-2.267,1.55-3.7,1.55s-2.667-0.517-3.7-1.55l-13.8-16.1c-0.4-0.467-0.8-0.917-1.2-1.35C1.683,34.233,0,29.35,0,23.75 C0,17.183,2.333,11.566,7,6.9C11.6,2.3,17.183,0,23.75,0z"/>
 			<g id="train">
@@ -80,3 +80,13 @@ $contact_id = getIdBySlug('contact');
 
 <?php get_template_part( 'page', 'footer-front-page' ); ?>
 <?php get_footer(); ?>
+
+
+
+about airplane
+
+projects bus
+
+blog ship
+
+contact train

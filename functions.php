@@ -321,9 +321,35 @@ add_action( 'save_post', 'about_content_save' );
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Mostrar meta boxes apropriados de acordo com o conteúdo sendo editado */
 add_action( 'add_meta_boxes', 'remove_post_meta_boxes' );
-
 
 
 function remove_post_meta_boxes() {

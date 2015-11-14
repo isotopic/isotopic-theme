@@ -203,10 +203,10 @@ var IsotopicHome = (function($){
 
         //Itens do DOM para serem animados
         sprites['home_intro'] = document.getElementById("home_intro") || {'style':{}};
-        sprites['item_about'] = document.getElementById("item_about") || {'style':{}};
-        sprites['item_projects'] = document.getElementById("item_projects") || {'style':{}};
-        sprites['item_blog'] = document.getElementById("item_blog") || {'style':{}};
-        sprites['item_contact'] = document.getElementById("item_contact") || {'style':{}};
+        sprites['item_airplane'] = document.getElementById("item_airplane") || {'style':{}};
+        sprites['item_bus'] = document.getElementById("item_bus") || {'style':{}};
+        sprites['item_ship'] = document.getElementById("item_ship") || {'style':{}};
+        sprites['item_train'] = document.getElementById("item_train") || {'style':{}};
 
         sprites['home_intro'].timeline =
                 [{ key:0.0,    x:null,  y:-200,   alpha:1},
@@ -215,7 +215,7 @@ var IsotopicHome = (function($){
 
         finalx = 80;
         finaly = -155;
-        sprites['item_about'].timeline = [
+        sprites['item_airplane'].timeline = [
                 { key:0,    x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.9,  x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.94,  x:finalx,  y:finaly,   alpha:1 },
@@ -223,21 +223,21 @@ var IsotopicHome = (function($){
 
         finalx = -80;
         finaly = -40;
-        sprites['item_projects'].timeline = [
+        sprites['item_bus'].timeline = [
                 { key:0,    x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.92,  x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.96,  x:finalx,  y:finaly,   alpha:1 },
                 { key:1,     x:finalx,  y:finaly,   alpha:1 }];
         finalx = -100;
         finaly = 80;
-        sprites['item_contact'].timeline = [
+        sprites['item_train'].timeline = [
                 { key:0,    x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.94,  x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.98,  x:finalx,  y:finaly,   alpha:1},
                 { key:1,     x:finalx,  y:finaly,   alpha:1 }];
         finalx = 125;
         finaly = 20;
-        sprites['item_blog'].timeline = [
+        sprites['item_ship'].timeline = [
                 { key:0,    x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.96,  x:finalx,  y:finaly+20,   alpha:0},
                 { key:0.99,  x:finalx,  y:finaly,   alpha:1},
@@ -355,10 +355,10 @@ var IsotopicHome = (function($){
             cta.style['margin-top'] = "0px";
             document.getElementById("home_intro").appendChild(cta);
             //interação touch 
-            document.getElementById('item_about').addEventListener('touchend', itemTouch, false);
-            document.getElementById('item_projects').addEventListener('touchend', itemTouch, false);
-            document.getElementById('item_blog').addEventListener('touchend', itemTouch, false);
-            document.getElementById('item_contact').addEventListener('touchend', itemTouch, false);
+            document.getElementById('item_airplane').addEventListener('touchend', itemTouch, false);
+            document.getElementById('item_bus').addEventListener('touchend', itemTouch, false);
+            document.getElementById('item_ship').addEventListener('touchend', itemTouch, false);
+            document.getElementById('item_train').addEventListener('touchend', itemTouch, false);
         }else{
             cta.src = path +"/img/cta.svg";
             cta.style['margin-top'] = "0px";
@@ -383,15 +383,15 @@ var IsotopicHome = (function($){
         renderer.resize( wW*2, wH*2 );
         //Ajustes hotspots
         if(wW<550){
-            $('#item_about').addClass('home-item-lefty');
-            $('#item_projects').removeClass('home-item-lefty');
-            $('#item_blog').addClass('home-item-lefty');
-            $('#item_contact').removeClass('home-item-lefty');
+            $('#item_airplane').addClass('home-item-lefty');
+            $('#item_bus').removeClass('home-item-lefty');
+            $('#item_ship').addClass('home-item-lefty');
+            $('#item_train').removeClass('home-item-lefty');
         }else{
-            $('#item_about').removeClass('home-item-lefty');
-            $('#item_projects').addClass('home-item-lefty');
-            $('#item_blog').removeClass('home-item-lefty');
-            $('#item_contact').addClass('home-item-lefty');
+            $('#item_airplane').removeClass('home-item-lefty');
+            $('#item_bus').addClass('home-item-lefty');
+            $('#item_ship').removeClass('home-item-lefty');
+            $('#item_train').addClass('home-item-lefty');
         }
     }
 
