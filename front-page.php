@@ -1,26 +1,18 @@
 <?php get_header(); ?>
 
 
-
-
-<?php
-//The front-page will look only for these 4 slugs
-$about_id = getIdBySlug('about');
-$projects_id = getIdBySlug('projects');
-$blog_id = getIdBySlug('blog');
-$contact_id = getIdBySlug('contact');
-?>
-
-
 <div id="scroller"></div>
 
 
 <div id="holder">
 
+
 	<div id="home_intro">
-		<?php while ( have_posts() ) : the_post(); ?>
+		
+<?php while ( have_posts() ) : the_post(); ?>
 			<?php the_content(); ?>
 		<?php endwhile; ?>
+
 		<svg id="throbber" width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g fill="none" fill-rule="evenodd" stroke-width="2"><circle cx="22" cy="22" r="1"><animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite" /><animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite" /></circle><circle cx="22" cy="22" r="1"><animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite" /><animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite" /></circle></g></svg>
 	</div>
 
@@ -75,8 +67,6 @@ $contact_id = getIdBySlug('contact');
 <script src="<?php echo get_template_directory_uri(); ?>/src/js/MobileScroll.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/src/js/Home.js"></script>-->*/ ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/isotopic-home.js"></script>
-
-
 
 <?php get_template_part( 'page', 'footer-front-page' ); ?>
 <?php get_footer(); ?>

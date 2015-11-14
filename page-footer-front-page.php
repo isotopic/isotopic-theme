@@ -24,12 +24,12 @@
 				    $recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 				    if (count($recent_posts) ){
-				    	echo "\n<ul>";
+				    	echo "\n\t\t\t<ul>";
 					    foreach($recent_posts as $post){
-					    	echo "\n";
+					    	echo "\n\t\t\t\t";
 					    	echo '<li><a href="blog/'.$post['post_name'].'">'.$post['post_title'].'</a></li>';
 					    }
-					    echo "\n</ul>";
+					    echo "\n\t\t\t</ul>";
 				    }
 
 				?>
@@ -51,9 +51,6 @@
 				<a href="http://br.linkedin.com/in/isotopic" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.png"></a>
 				<a href="https://github.com/isotopic" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/img/github.png"></a>
 			</div>
-
-
-
 
 
 		</div>
