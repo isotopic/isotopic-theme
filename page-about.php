@@ -36,7 +36,7 @@ get_template_part( 'page', 'header' );
 	<div class="container">
 		<div class="row">
 
-			<div class="col-md-5 no-padding no-margin">
+			<div class="col-md-6 no-padding no-margin">
 
 				<div class="about-item col-sm-12">
 					<div class="about-item-wrapper about-info">
@@ -96,7 +96,17 @@ get_template_part( 'page', 'header' );
 
 
 
-			<div class="col-md-7  no-padding no-margin">
+
+
+
+
+
+
+
+
+
+
+			<div class="col-md-6  no-padding no-margin">
 
 				<div class="about-item col-sm-12">
 					<div class="about-item-wrapper">
@@ -116,11 +126,28 @@ get_template_part( 'page', 'header' );
 
 
 
-				<div class="about-item col-sm-12 hidden">
+				<div class="about-item col-sm-12 ">
+					<div class="about-item-wrapper about-contact">
+
+						<h3>Contact</h3>
+
+						<img src="<?php echo get_template_directory_uri(); ?>/img/dotmap.png" class="img-responsive" >
+						<p>
+							<a href="mailto:guilhermecruz@gmail.com">guilhermecruz@gmail.com</a> <br>
+							<a href="https://br.linkedin.com/in/isotopic" target="_blank">linkedin</a> <br>
+							<a href="https://github.com/isotopic" target="_blank">github</a> <br>
+						</p>
+
+						<div class="clearfix"></div>
+
+					</div>
+				</div>
+
+
+				<div class="about-item col-sm-12  hidden">
 					<div class="about-item-wrapper about-personal">
 
 						<h3>Personal</h3>
-
 						<div class="about-item col-xs-2">
 							<p> <img src="<?php echo get_template_directory_uri(); ?>/img/about1.png" class="img-responsive"></p>
 						</div>
@@ -143,13 +170,14 @@ get_template_part( 'page', 'header' );
 
 					</div>
 				</div>
+
+
 
 
 				<div class="about-item col-sm-12 hidden">
 					<div class="about-item-wrapper about-pdf">
 
 						<h3>PDF version</h3>
-
 						<div class="about-item col-xs-2">
 							<p> <img src="<?php echo get_template_directory_uri(); ?>/img/about1.png" class="img-responsive"></p>
 						</div>
@@ -157,6 +185,7 @@ get_template_part( 'page', 'header' );
 
 					</div>
 				</div>
+
 
 
 
