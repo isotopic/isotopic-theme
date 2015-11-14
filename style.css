@@ -281,19 +281,20 @@ body.home {
 #home_intro h2{
   font-weight: 300;
   line-height: 52px;
-  font-size:56px;
+  font-size:54px;
   color:#fff;
-  margin:0;
+  margin:0 0 20px 0;
   padding:0;
 }
 
 
 #home_intro h2 span{
-  margin:-5px;
+  margin:10px 0 0 0;
   padding:0;
   color:#6C8D97;
   font-weight: 700;
   font-size: 16px;
+  line-height:26px;
    display:block;
 }
 
@@ -415,8 +416,16 @@ body.home {
   text-align: right;
   min-height:350px;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position:top center;
+  background-size: auto;
+  background-position:center center;
+
+  background-color:#9DBDC6;
+}
+
+
+
+@media screen and (min-width: 2000px) {
+.page-top{  background-size: 100% auto;}
 }
 
 @media screen and (min-width: 1366px) {
