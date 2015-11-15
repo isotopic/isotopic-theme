@@ -164,7 +164,7 @@ if ( !empty($images) ){
 				<?php
 				foreach($images_src as $img){
 
-				 if (strpos($img, '_mobile_')!==false){
+				 if (strpos($img, '_mobile')!==false){
 				 	echo '<div class="col-xs-6">';
 				 }else{
 				 	echo '<div class="col-xs-12">';

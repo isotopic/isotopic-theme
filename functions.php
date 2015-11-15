@@ -482,6 +482,144 @@ function getIdBySlug($_slug){
 
 
 
+//DASHBOARD shortcuts meta box
+
+function shortcuts_widget_function(){ 
+
+	$home_id = get_option('page_on_front');
+	$about_id = getIdBySlug('about');
+	$projects_id = getIdBySlug('projects');
+
+	?>
+
+	<style>
+	h2{
+		text-align: center;
+		border-bottom:1px solid #f0f0f0;
+		padding-bottom: 20px !important;
+	}
+	.clone-icon-menu::before{
+		content: "";
+	}
+	.clone-icon-edit::before{
+		content: "";
+	}
+	.clone-icon-add::before{
+		content: "";
+	}
+	.clone-icon{
+	    color: #82878C;
+	    font: 400 20px/1 dashicons;
+	    display: inline-block;
+	    padding: 0px 0px 0px 0px;
+	    top: -1px;
+	    position: relative;
+	    -moz-osx-font-smoothing: grayscale;
+	    text-decoration: none !important;
+	    vertical-align: top;
+	}
+	ul{
+		padding:12px;
+		width:33%;
+		float:left;
+		box-sizing: border-box;
+	}
+	</style>
+ 
+	<h2><img src="../wp-content/themes/isotopic/img/logo_wide.svg" style="text-align:center; margin-top:20px" alt="Isotopic"></h2>
+
+
+	<ul>
+		<li><span class="clone-icon clone-icon-menu"></span> <a href="nav-menus.php">Menu items</a></li>
+	</ul>
+	<ul>
+		<li><span class="clone-icon clone-icon-edit"></span> <a href="post.php?post=<?php echo $home_id;?>&action=edit">Home Page</a></li>
+		<li><span class="clone-icon clone-icon-edit"></span> <a href="post.php?post=<?php echo $about_id;?>&action=edit">About Page</a></li>
+	</ul>
+	<ul>
+		<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php">Blog post</a></li>
+		<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=page&page_parent=<?php echo $projects_id;?>action=edit">Project</a></li><!-- predefined page_parent is a hack! -->
+		<li><span class="clone-icon clone-icon-add"></span> <a href="media-new.php">Media</a></li>
+	</ul>
+	
+	<div style="clear:both;border-top:1px solid #f0f0f0;padding-top:20px">
+		<h4>General guides</h4>
+
+		<p><b>HOME LINKS</b><br>
+			Any link can be assigned to the icons but they must be in this form:<br>
+			<small>&lt;a href="slug"&gt;&lt;p&gt;Title &lt;span&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;&lt;/p&gt;</small>
+		</p>
+
+		<p><b>PROJECT ITEM</b> <br>
+			Images must be 700×500 and mobile images 360×640.<br>Mobile images must contain the string “_mobile” in the filename.<br>
+			All projects must include a 700x500 featured image.
+		</p>
+	</div>
+
+ 
+<?php }
+ 
+
+function add_widgets() {
+    wp_add_dashboard_widget( 'shortcuts_widget_box', 'Shortcuts', 'shortcuts_widget_function' );
+}
+add_action( 'wp_dashboard_setup', 'add_widgets' );
+
+
+
+
+
+
+
+
+
+/* 
+This allows new-post.php to get a new parameter 'page_parent' so the parent dropdown get preselected
+*/
+class Add_Child_Page {
+    static function on_load() {
+        add_action( 'init', array( __CLASS__, 'init' ) );
+        add_action( 'admin_init', array( __CLASS__, 'admin_init' ) );
+    }
+
+    static function init() {
+        add_action( 'admin_bar_menu', array( __CLASS__, 'admin_bar_menu' ), 90 );
+    }
+
+    static function admin_bar_menu( $wp_admin_bar ) {
+        if( is_page() ) {
+            $wp_admin_bar->add_node( array(
+                'id'    => 'add_child_page',
+                'title' => 'Add Child Page',
+                'href'  => add_query_arg( array( 'post_type'   => 'page', 'page_parent' => get_the_ID() ), admin_url( 'post-new.php' ) ),
+            ) );
+        }
+    }
+
+    static function admin_init() {
+        add_filter( 'page_attributes_dropdown_pages_args', array( __CLASS__, 'page_attributes_dropdown_pages_args' ) );
+    }
+
+    static function page_attributes_dropdown_pages_args( $dropdown_args ) {
+        if ( ! empty($_REQUEST['page_parent']) )
+            $dropdown_args['selected'] = (int) $_REQUEST['page_parent'];
+        return $dropdown_args;
+    }
+}
+Add_Child_Page::on_load();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
