@@ -1,43 +1,52 @@
 <?php
+/*
+
+1. HEAD
+2. THEME SUPPORT
+3. TAXONOMIES
+4. FILTERS
+5. ADMIN
+
+*/
+
+
 
 /*
+Changing site url
 define('WP_HOME','http://www.isotopic.com.br');
 define('WP_SITEURL','http://www.isotopic.com.br/wordpress');
 */
+
+
+
 /*
-============================================================================================================
-==================================================================================================== WP_HEAD
-============================================================================================================
+====================================================================================================
+==================================================================================================== 1. WP_HEAD
+====================================================================================================
 */
 
 
-
-
-function isotopic_get_styles(){
-	echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/css/bootstrap.min.css" type="text/css" media="all">';
-	echo "\n";
-	//echo '<link href="http://fonts.googleapis.com/css?family=Dosis:400,500,700,600,800,300" rel="stylesheet" type="text/css">';
-	echo '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Dosis:300,400,500,600" type="text/css">';
-	echo "\n";
-	echo '<link rel="stylesheet" href="'.get_template_directory_uri().'/style.css" type="text/css" media="all">';
+//Insere estilos
+function isotopic_enqueue_style() {
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false, null );
+    wp_enqueue_style( 'fonts', '//fonts.googleapis.com/css?family=Dosis:300,400,500,600', false, null );
+    wp_enqueue_style( 'core', get_stylesheet_uri(), array('bootstrap','fonts'), null );
 }
-add_action('wp_head', 'isotopic_get_styles');
-
-//Algumas páginas não exigem nem jquery, então cada dependência é inserida diretamente em cada template e não através de enqueue script.
+add_action( 'wp_enqueue_scripts', 'isotopic_enqueue_style' );
 
 
-//Remove bloatcode
+
+//No thanks
 remove_action( 'wp_head', 'rsd_link');
 remove_action( 'wp_head', 'wlwmanifest_link');
 remove_action( 'wp_head', 'wp_generator');
-//
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
-//MENU
+//Menu
 function register_menus() {
   register_nav_menu('mainMenu', 'Menu Principal');
   register_nav_menu('footerMenu', 'Menu Footer');
@@ -52,11 +61,10 @@ add_action('init', 'register_menus');
 
 
 
-
 /*
-============================================================================================================
-============================================================================================   THEME SUPPORT
-============================================================================================================
+====================================================================================================
+==================================================================================================== 2. THEME SUPPORT
+====================================================================================================
 */
 
 add_theme_support( 'post-thumbnails' );
@@ -72,9 +80,9 @@ add_theme_support( 'post-thumbnails' );
 
 
 /*
-============================================================================================================
-===================================================================================================TAXONOMY
-============================================================================================================
+====================================================================================================
+==================================================================================================== 3. TAXONOMIES
+====================================================================================================
 */
 
 
@@ -120,15 +128,13 @@ function project_taxonomies() {
 
 
 
+
 /*
-============================================================================================================
-==================================================================================================== FILTERS
-============================================================================================================
+====================================================================================================
+==================================================================================================== 4. FILTERS
+====================================================================================================
 */
 
-
-
-//Link "leia mais" sem âncora
 function remove_more_link_scroll( $link ) {
 	$link = preg_replace( '|#more-[0-9]+|', '', $link );
 	return $link;
@@ -141,7 +147,7 @@ remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
 
-//Remove styles da barra de edição pra usuários logados
+//Remove admin bar styles
 add_filter('show_admin_bar', '__return_false');
 
 
@@ -159,28 +165,18 @@ add_filter('show_admin_bar', '__return_false');
 
 
 
-
-
-
-
-
-
-
-
-
 /*
-============================================================================================================
-========================================================================================== CUSTOM META BOXES
-============================================================================================================
+====================================================================================================
+==================================================================================================== 5. ADMIN
+====================================================================================================
 */
 
 
-/// Generated by the WordPress Meta Box generator at http://jeremyhixon.com/tool/wordpress-meta-box-generator
+//Big thanks to http://jeremyhixon.com/tool/wordpress-meta-box-generator
 
 
-/*
-=============================== ABOUT CUSTOM BOXES
-*/
+/* ABOUT PAGE - CUSTOM META BOXES */
+
 function about_content_get_meta( $value ) {
 	global $post;
 
@@ -232,13 +228,12 @@ function about_content_html( $post) {
 	</p><?php
 }
 
+
+
 function about_content_save( $post_id ) {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 	if ( ! isset( $_POST['about_content_nonce'] ) || ! wp_verify_nonce( $_POST['about_content_nonce'], '_about_content_nonce' ) ) return;
 	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
-
-
-
 	$allowed_html = array(
 	    'div' => array(
 	        'class' => array(),
@@ -254,7 +249,6 @@ function about_content_save( $post_id ) {
 	    'span' => array(),
 	    'p' => array(),
 	);
-
 	if ( isset( $_POST['about_content_info'] ) )
 		update_post_meta( $post_id, 'about_content_info', wp_kses( $_POST['about_content_info'], $allowed_html ) );
 	if ( isset( $_POST['about_content_skills1'] ) )
@@ -267,7 +261,6 @@ function about_content_save( $post_id ) {
 		update_post_meta( $post_id, 'about_content_timeline', wp_kses( $_POST['about_content_timeline'], $allowed_html ) );
 }
 add_action( 'save_post', 'about_content_save' );
-
 //about_content_get_meta( 'about_content_info' )
 
 
@@ -275,9 +268,7 @@ add_action( 'save_post', 'about_content_save' );
 
 
 
-/*
-=============================== HOME PAGE CUSTOM BOXES
-*/
+/* HOME PAGE - CUSTOM META BOXES */
 function home_links_get_meta( $value ) {
 	global $post;
 
@@ -304,7 +295,9 @@ add_action( 'add_meta_boxes', 'home_links_add_meta_box' );
 function home_links_html( $post) {
 	wp_nonce_field( '_home_links_nonce', 'home_links_nonce' ); ?>
 
-	<p>The links for each transportation icon.</p>
+	<p>The links for each transportation icon. They must follow the html format: <br>
+
+		<pre>&lt;a href="slug"&gt;&lt;p&gt;Title &lt;span&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;&lt;/p&gt;</pre>
 
 	<p>
 		<label for="home_links_airplane"><?php _e( 'airplane', 'home_links' ); ?></label><br>
@@ -325,9 +318,6 @@ function home_links_save( $post_id ) {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 	if ( ! isset( $_POST['home_links_nonce'] ) || ! wp_verify_nonce( $_POST['home_links_nonce'], '_home_links_nonce' ) ) return;
 	if ( ! current_user_can( 'edit_post', $post_id ) ) return;
-
-
-	
 	$allowed_html = array(
 	    'div' => array(
 	        'class' => array(),
@@ -343,8 +333,6 @@ function home_links_save( $post_id ) {
 	    'span' => array(),
 	    'p' => array(),
 	);
-
-
 	if ( isset( $_POST['home_links_airplane'] ) )
 		update_post_meta( $post_id, 'home_links_airplane', wp_kses( $_POST['home_links_airplane'], $allowed_html ) );
 	if ( isset( $_POST['home_links_bus'] ) )
@@ -393,12 +381,10 @@ add_action( 'save_post', 'home_links_save' );
 
 
 
-/* Mostrar meta boxes apropriados de acordo com o conteúdo sendo editado */
-add_action( 'add_meta_boxes', 'remove_post_meta_boxes' );
+/* Show/hide specific meta boxes accordingly to the content being edited */
 
 
 function remove_post_meta_boxes() {
-
 
 	if(isset($_GET['post'])) {
 		$ID = $_GET['post'];
@@ -409,8 +395,7 @@ function remove_post_meta_boxes() {
 	$is_page = is_page($ID);
 
 
-
-	//Home
+	//Set HOME edit screen
 	if(get_option('page_on_front') != $ID){
 		remove_meta_box('home_links-home-links', 'post', 'normal');
         remove_meta_box('home_links-home-links', 'page', 'normal');
@@ -424,17 +409,14 @@ function remove_post_meta_boxes() {
 	}
 
 
-
-
-	//ABOUT
+	//Set ABOUT edit screen
     if( $ID != getIdBySlug('about') ) {
         remove_meta_box('about_content-about-content', 'post', 'normal');
         remove_meta_box('about_content-about-content', 'page', 'normal');
     }
 
 
-
-    //ITENS DE PROJETOS
+    //Set the PROJECT ITEM edit screen
     $projects_id = getIdBySlug('projects');
 	$ancestors =  get_post_ancestors( $ID );
 	if( count($ancestors)>0 && $ancestors[0]==$projects_id ){
@@ -451,14 +433,10 @@ function remove_post_meta_boxes() {
 			remove_meta_box('postimagediv', 'post', 'advanced');
 	        remove_meta_box('postimagediv', 'page', 'advanced');    
 		}
-
 	}
 
 
-
-
-
-	//Remover de tudo
+	//Not used anywhere
 	remove_meta_box('commentstatusdiv', 'post', 'normal');
 	remove_meta_box('commentstatusdiv', 'page', 'normal');
 
@@ -474,30 +452,11 @@ function remove_post_meta_boxes() {
     remove_meta_box('postcustom', 'post', 'normal');
     remove_meta_box('postcustom', 'page', 'normal');
 
-
 }
 
+add_action( 'add_meta_boxes', 'remove_post_meta_boxes' );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-UTILS
-*/
 
 
 function getIdBySlug($_slug){
@@ -533,18 +492,12 @@ function getIdBySlug($_slug){
 
 
 
-
-
-
-
-
-
-// add a new logo to the login page
-function wptutsplus_login_logo() { 
+//Custom admin login screen
+function login_isotopic() { 
 
 	$logo =  'wp-content/themes/isotopic/img/logo.svg';
 	
-   echo  '<style type="text/css">
+	echo  '<style type="text/css">
         .login #login h1 a {
             background-image: url( '.$logo.' );
         }
@@ -574,12 +527,20 @@ function wptutsplus_login_logo() {
         }
     </style>';
 }
-add_action( 'login_enqueue_scripts', 'wptutsplus_login_logo' );
+add_action( 'login_enqueue_scripts', 'login_isotopic' );
 
 
 
 
 
+
+//I know when to update
+function remove_core_updates(){
+    global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+}
+add_filter('pre_site_transient_update_core','remove_core_updates');
+add_filter('pre_site_transient_update_plugins','remove_core_updates');
+add_filter('pre_site_transient_update_themes','remove_core_updates');
 
 
 
