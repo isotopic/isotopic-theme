@@ -28,6 +28,12 @@ body{
   cursor:default;
 }
 
+pre{
+  border:none !important;
+}
+@media screen and (max-width: 500px) {
+     pre  { font-size:11px;}
+}
 
 .page-top, .toolbar, .toolbar-filters, .content-panel{
   -webkit-user-select: none;

@@ -194,6 +194,8 @@ get_template_part( 'page', 'header' );
 
 
 
+<script src="<?php echo get_template_directory_uri(); ?>/js/prism.js"></script>
+
 <?php
 
 get_template_part( 'page', 'footer' ); 

@@ -31,6 +31,9 @@ function isotopic_enqueue_style() {
     wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false, null );
     wp_enqueue_style( 'fonts', '//fonts.googleapis.com/css?family=Dosis:300,400,500,600', false, null );
     wp_enqueue_style( 'core', get_stylesheet_uri(), array('bootstrap','fonts'), null );
+    if(is_single()){
+    	wp_enqueue_style( 'prism', get_template_directory_uri().'/css/prism.css', false, null );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'isotopic_enqueue_style' );
 
@@ -431,7 +434,7 @@ function remove_post_meta_boxes() {
         remove_meta_box('tagsdiv-client', 'page', 'side');
         remove_meta_box('tagsdiv-service', 'post', 'side');
         remove_meta_box('tagsdiv-service', 'page', 'side');
-        if(!$is_post){
+        if($is_page){
 			remove_meta_box('postimagediv', 'post', 'side');
 	        remove_meta_box('postimagediv', 'page', 'side');    
 		}
@@ -566,7 +569,7 @@ function shortcuts_widget_function(){
 
 			<h5>HOME LINKS</h5>
 			<p>
-				Any link can be assigned to the icons but they must be in this form:<br>
+				Any link can be assigned to the icons as long as they are like this:<br>
 				<small>&lt;a href="slug"&gt;&lt;p&gt;Title &lt;span&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;&lt;/p&gt;</small>
 			</p>
 
