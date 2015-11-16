@@ -419,19 +419,21 @@ function remove_post_meta_boxes() {
     //Set the PROJECT ITEM edit screen
     $projects_id = getIdBySlug('projects');
 	$ancestors =  get_post_ancestors( $ID );
+
 	if( count($ancestors)>0 && $ancestors[0]==$projects_id ){
 		remove_meta_box('postcustom', 'post', 'normal');
         remove_meta_box('postcustom', 'page', 'normal');
+        echo "ADFADFA";
 	}else{
-		remove_meta_box('tagsdiv-type', 'post', 'normal');
-        remove_meta_box('tagsdiv-type', 'page', 'normal');
-        remove_meta_box('tagsdiv-client', 'post', 'normal');
-        remove_meta_box('tagsdiv-client', 'page', 'normal');
-        remove_meta_box('tagsdiv-service', 'post', 'normal');
-        remove_meta_box('tagsdiv-service', 'page', 'normal');
+		remove_meta_box('tagsdiv-type', 'post', 'side');
+        remove_meta_box('tagsdiv-type', 'page', 'side');
+        remove_meta_box('tagsdiv-client', 'post', 'side');
+        remove_meta_box('tagsdiv-client', 'page', 'side');
+        remove_meta_box('tagsdiv-service', 'post', 'side');
+        remove_meta_box('tagsdiv-service', 'page', 'side');
         if(!$is_post){
-			remove_meta_box('postimagediv', 'post', 'advanced');
-	        remove_meta_box('postimagediv', 'page', 'advanced');    
+			remove_meta_box('postimagediv', 'post', 'side');
+	        remove_meta_box('postimagediv', 'page', 'side');    
 		}
 	}
 
@@ -439,6 +441,9 @@ function remove_post_meta_boxes() {
 	//Not used anywhere
 	remove_meta_box('commentstatusdiv', 'post', 'normal');
 	remove_meta_box('commentstatusdiv', 'page', 'normal');
+
+	remove_meta_box('commentsdiv', 'post', 'normal');
+	remove_meta_box('commentsdiv', 'page', 'normal');
 
     remove_meta_box('slugdiv', 'post', 'normal');
     remove_meta_box('slugdiv', 'page', 'normal');
@@ -552,7 +557,7 @@ function shortcuts_widget_function(){
 		</ul>
 		<ul>
 			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php">Blog post</a></li>
-			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=page&page_parent=<?php echo $projects_id;?>action=edit">Project</a></li><!-- predefined page_parent is a hack! -->
+			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=page&page_parent=<?php echo $projects_id;?>">Project</a></li><!-- predefined page_parent is a hack! -->
 			<li><span class="clone-icon clone-icon-add"></span> <a href="media-new.php">Media</a></li>
 		</ul>
 		
