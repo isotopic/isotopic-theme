@@ -297,19 +297,19 @@ function home_links_html( $post) {
 
 	<p>The links for each transportation icon. They must follow the html format: <br>
 
-		<pre>&lt;a href="slug"&gt;&lt;p&gt;Title &lt;span&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;&lt;/p&gt;</pre>
+		<pre style="color:#888">&lt;a href="slug_or_url"&gt; &lt;p&gt; Title &lt;span&gt;Description&lt;/span&gt; &lt;/p&gt; &lt;/a&gt;</pre>
 
 	<p>
-		<label for="home_links_airplane"><?php _e( 'airplane', 'home_links' ); ?></label><br>
+		<label for="home_links_airplane"><?php _e( 'Airplane', 'home_links' ); ?></label><br>
 		<input type="text" name="home_links_airplane" id="home_links_airplane" style="width:100%" value="<?php echo  esc_attr( home_links_get_meta( 'home_links_airplane' )); ?>">
 	</p>	<p>
-		<label for="home_links_bus"><?php _e( 'bus', 'home_links' ); ?></label><br>
+		<label for="home_links_bus"><?php _e( 'Bus', 'home_links' ); ?></label><br>
 		<input type="text" name="home_links_bus" id="home_links_bus" style="width:100%" value="<?php echo  esc_attr( home_links_get_meta( 'home_links_bus' )); ?>">
 	</p>	<p>
-		<label for="home_links_ship"><?php _e( 'ship', 'home_links' ); ?></label><br>
+		<label for="home_links_ship"><?php _e( 'Ship', 'home_links' ); ?></label><br>
 		<input type="text" name="home_links_ship" id="home_links_ship" style="width:100%" value="<?php echo  esc_attr( home_links_get_meta( 'home_links_ship' )); ?>">
 	</p>	<p>
-		<label for="home_links_train"><?php _e( 'train', 'home_links' ); ?></label><br>
+		<label for="home_links_train"><?php _e( 'Train', 'home_links' ); ?></label><br>
 		<input type="text" name="home_links_train" id="home_links_train" style="width:100%" value="<?php echo  esc_attr( home_links_get_meta( 'home_links_train' )); ?>">
 	</p><?php
 }
@@ -493,10 +493,18 @@ function shortcuts_widget_function(){
 	?>
 
 	<style>
-	h2{
+	#isotopic_widget_content h2{
 		text-align: center;
 		border-bottom:1px solid #f0f0f0;
+		margin-top:20px !important;
 		padding-bottom: 20px !important;
+	}	
+	#isotopic_widget_content h5{
+		margin-bottom:5px;
+	}	
+	#isotopic_widget_content p{
+		margin-top:5px;
+		color:#888;
 	}
 	.clone-icon-menu::before{
 		content: "";
@@ -518,42 +526,52 @@ function shortcuts_widget_function(){
 	    text-decoration: none !important;
 	    vertical-align: top;
 	}
-	ul{
+	#isotopic_widget_content ul{
 		padding:12px;
 		width:33%;
 		float:left;
 		box-sizing: border-box;
 	}
+	#isotopic_widget_content > div{
+		clear:both;
+		border-top:1px solid #f0f0f0;
+		padding-top:20px;
+	}
 	</style>
- 
-	<h2><img src="../wp-content/themes/isotopic/img/logo_wide.svg" style="text-align:center; margin-top:20px" alt="Isotopic"></h2>
 
+	<div id="isotopic_widget_content">
+	 
+		<h2><img src="../wp-content/themes/isotopic/img/logo_wide.svg" alt="Isotopic"></h2>
 
-	<ul>
-		<li><span class="clone-icon clone-icon-menu"></span> <a href="nav-menus.php">Menu items</a></li>
-	</ul>
-	<ul>
-		<li><span class="clone-icon clone-icon-edit"></span> <a href="post.php?post=<?php echo $home_id;?>&action=edit">Home Page</a></li>
-		<li><span class="clone-icon clone-icon-edit"></span> <a href="post.php?post=<?php echo $about_id;?>&action=edit">About Page</a></li>
-	</ul>
-	<ul>
-		<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php">Blog post</a></li>
-		<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=page&page_parent=<?php echo $projects_id;?>action=edit">Project</a></li><!-- predefined page_parent is a hack! -->
-		<li><span class="clone-icon clone-icon-add"></span> <a href="media-new.php">Media</a></li>
-	</ul>
-	
-	<div style="clear:both;border-top:1px solid #f0f0f0;padding-top:20px">
-		<h4>General guides</h4>
+		<ul>
+			<li><span class="clone-icon clone-icon-menu"></span> <a href="nav-menus.php">Manage Menu</a></li>
+		</ul>
+		<ul>
+			<li><span class="clone-icon clone-icon-edit"></span> <a href="post.php?post=<?php echo $home_id;?>&action=edit">Edit Home</a></li>
+			<li><span class="clone-icon clone-icon-edit"></span> <a href="post.php?post=<?php echo $about_id;?>&action=edit">Edit About</a></li>
+		</ul>
+		<ul>
+			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php">Blog post</a></li>
+			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=page&page_parent=<?php echo $projects_id;?>action=edit">Project</a></li><!-- predefined page_parent is a hack! -->
+			<li><span class="clone-icon clone-icon-add"></span> <a href="media-new.php">Media</a></li>
+		</ul>
+		
+		<div>
+			<h4>General guides</h4>
 
-		<p><b>HOME LINKS</b><br>
-			Any link can be assigned to the icons but they must be in this form:<br>
-			<small>&lt;a href="slug"&gt;&lt;p&gt;Title &lt;span&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;&lt;/p&gt;</small>
-		</p>
+			<h5>HOME LINKS</h5>
+			<p>
+				Any link can be assigned to the icons but they must be in this form:<br>
+				<small>&lt;a href="slug"&gt;&lt;p&gt;Title &lt;span&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;&lt;/p&gt;</small>
+			</p>
 
-		<p><b>PROJECT ITEM</b> <br>
-			Images must be 700×500 and mobile images 360×640.<br>Mobile images must contain the string “_mobile” in the filename.<br>
-			All projects must include a 700x500 featured image.
-		</p>
+			<h5>PROJECT ITEM</h5>
+			<p>
+				Images must be 700×500 and mobile images 360×640.<br>Mobile images must contain the string “_mobile” in the filename.<br>
+				All projects must include a 700x500 featured image.
+			</p>
+		</div>
+
 	</div>
 
  
@@ -572,9 +590,8 @@ add_action( 'wp_dashboard_setup', 'add_widgets' );
 
 
 
-
 /* 
-This allows new-post.php to get a new parameter 'page_parent' so the parent dropdown get preselected
+This allows new-post.php url to accept a get parameter, 'page_parent', so the parent dropdown gets automatically selected 
 */
 class Add_Child_Page {
     static function on_load() {
@@ -647,9 +664,9 @@ function login_isotopic() {
 
         .login form{
         	box-shadow:none;
-        	-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
+        	-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
         }
         input[type="text"],input[type="password"] {
         	border:none !important;
