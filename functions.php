@@ -206,23 +206,23 @@ function about_content_html( $post) {
 	<p>Html content inside the cards</p>
 
 	<p>
-		<label for="about_content_info"><?php _e( 'info', 'about_content' ); ?></label><br>
+		<label for="about_content_info" style="font-weight:bold"><?php _e( 'Info', 'about_content' ); ?></label><br>
 		<textarea name="about_content_info" id="about_content_info" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_info' ); ?></textarea>
 
 	</p>	<p>
-		<label for="about_content_skills1"><?php _e( 'skills1', 'about_content' ); ?> (Interaction Design)</label><br>
+		<label for="about_content_skills1" style="font-weight:bold"><?php _e( 'Skills: Interaction Design', 'about_content' ); ?> </label><br>
 		<textarea name="about_content_skills1" id="about_content_skills1" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_skills1' ); ?></textarea>
 
 	</p>	<p>
-		<label for="about_content_skills2"><?php _e( 'skills2', 'about_content' ); ?> (Front-end)</label><br>
+		<label for="about_content_skills2" style="font-weight:bold"><?php _e( 'Skills: Front-end', 'about_content' ); ?> </label><br>
 		<textarea name="about_content_skills2" id="about_content_skills2" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_skills2' ); ?></textarea>
 
 	</p>	<p>
-		<label for="about_content_skills3"><?php _e( 'skills3', 'about_content' ); ?> (Back-end)</label><br>
+		<label for="about_content_skills3" style="font-weight:bold"><?php _e( 'Skills: Back-end', 'about_content' ); ?> </label><br>
 		<textarea name="about_content_skills3" id="about_content_skills3" style="width:100%;min-height:150px"><?php echo about_content_get_meta( 'about_content_skills3' ); ?></textarea>
 
 	</p>	<p>
-		<label for="about_content_timeline"><?php _e( 'timeline', 'about_content' ); ?></label><br>
+		<label for="about_content_timeline"><?php _e( 'Timeline', 'about_content' ); ?></label><br>
 		<textarea name="about_content_timeline" id="about_content_timeline" style="width:100%;min-height:350px"><?php echo about_content_get_meta( 'about_content_timeline' ); ?></textarea>
 
 	</p><?php
