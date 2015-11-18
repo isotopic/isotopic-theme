@@ -41,7 +41,7 @@ get_template_part( 'page', 'header' );
 
 		<div class="row">
 
-			<div class="col-sm-9 blog-post">
+			<div class="col-sm-8 blog-post">
 
 
 	<?php
@@ -175,7 +175,7 @@ get_template_part( 'page', 'header' );
 
 
 
-			<div class="col-sm-3 blog-side">
+			<div class="col-sm-4 blog-side">
 				<?php get_template_part( 'home', 'blog-side'); ?>
 			</div>
 
