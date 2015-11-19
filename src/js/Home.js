@@ -1,5 +1,57 @@
 var IsotopicHome = (function($){
 
+    /**
+
+    ANIMAÇÃO DA HOME DO SITE
+
+    De maneira geral, a animação dos objetos consiste no seguinte esquema:
+
+    > Registra-se no objeto (sprites) as referências aos elementos que devem ser animados.
+      Esses elementos podem ser tanto objetos PIXI como também elementos DOM existentes na página.
+
+    > Para cada objeto a ser animado, adiciona-se uma propriedade timeline, quem contém informações
+      sobre os valores que o elemento deve ter em cada ponto no tempo (no caso, a posição da rolagem de 0 a 1).
+
+      Exemplo: 
+
+      //O objeto de referÊncias inicialmente vazio
+      var sprites = {};
+
+      //Registrada uma referência para um objeto PIXI
+      sprites['algum_tile'] = PIXI.Sprite.fromFrame('algum_tile');
+
+      //E agora as informações sobre como seus valores de y devem se comportar com relação ao key de 0 a 1.
+      sprites['algum_tile'].timeline = [{ key:0.00, y:0   },
+                                        { key:0.25, y:100 },
+                                        { key:0.75, y:100 },
+                                        { key:1.00, y:0   }];
+
+      //Exemplo para adicionar um elemento DOM:
+      sprites['item_train'] = document.getElementById("item_train") || {'style':{}};
+
+      //Timeline no mesmo formato que para objetos pixi.
+      sprites['item_train'].timeline = [{ key:0.00,  alpha:1 },
+                                        { key:0.15,  alpha:0 },
+                                        { key:1.00,  alpha:0 }];
+
+      > Os elementos estão prontos para serem adicionados ao stage, através de:
+
+      levelContainer.addChild( sprites['algum_tile'] );
+      levelContainer.addChild( sprites['item_train'] );
+
+
+      TL;DR
+
+      Todos os elementos a serem animados devem ser referenciados no objeto sprites.
+      Os elementos podem ser objetos PIXI, ou elementos DOM.
+      Os elementos devem conter uma propriedade 'timeline', definindo o comportamento da animação.
+
+
+
+    */
+
+
+
 
     window.ratio = 0;
     var path = window.isotopic_template_path;
@@ -15,6 +67,16 @@ var IsotopicHome = (function($){
 
 
 
+
+    /**
+    *
+    * Entry point
+    *
+    * O estado da animação é baseado no valor da variável window.ratio.
+    * No caso de desktop, essa variável é atualizada pelo evento onScroll.
+    * No caso de mobile, essa variável é atualizada pela função em MobileScroll.js, que utiliza eventos touch para detectar drags.
+    *
+    */
     $(document).ready(function(){
         if(is_touch){
             document.getElementById('scroller').style.display = 'none';
@@ -28,7 +90,11 @@ var IsotopicHome = (function($){
 
 
 
-
+    /**
+    *
+    * Inicia objeto PIXI e preloader do spritesheet e mais um png solto (da sombra). 
+    *
+    */
     function setup(){
         stage = new PIXI.Stage();
         PIXI.dontSayHello  = true;
@@ -43,7 +109,6 @@ var IsotopicHome = (function($){
         levelContainer = new PIXI.DisplayObjectContainer();
         stage.addChild(levelContainer);
         updateScreen();
-        //http://www.leshylabs.com/apps/sstool = json HASH e adicionar  parametro "image": "spritesheet.png" no meta
         loader = new PIXI.AssetLoader([ path+"/img/sprites.json", path+"/img/shadow.png"]);
         loader.onComplete = onAssetsLoaded;
         loader.load();
@@ -53,7 +118,12 @@ var IsotopicHome = (function($){
 
 
 
-
+    /**
+    *
+    * Função para facilitar a inclusão de referências de elementos ao objeto sprite.
+    * Recebe um nome que será a chave em sprites, e propriedades opcionais.
+    *
+    */
     function extraChild(_options){
         if(_options && _options.name){
             sprites[_options.name] = PIXI.Sprite.fromFrame(_options.name);
@@ -69,8 +139,12 @@ var IsotopicHome = (function($){
     }
 
 
-    function onAssetsLoaded(){  //Elementos inseridos de acordo com z index: nuvens e sombra, cenario, veiculos
-
+    /**
+    *
+    * Elementos já carregados, serão registrados no objeto sprite.
+    *
+    */
+    function onAssetsLoaded(){ 
 
         var finalx;
         var finaly;
@@ -80,8 +154,8 @@ var IsotopicHome = (function($){
         var delay;
         
 
-        // NUVENS E SOMBRA
-         extraChild({ name:"cloud1", timeline:  [
+        //Registra NUVENS e SOMBRA
+        extraChild({ name:"cloud1", timeline:  [
             { key:0.0,        x:390,  y:-200,   alpha:0, rotation:0},
             { key:1.0,        x:390,  y:-100,   alpha:0.9, rotation:0}]   });
 
@@ -99,7 +173,9 @@ var IsotopicHome = (function($){
             { key:1.0,        x:0,  y:400,   alpha:0.6, rotation:0}]   });
 
 
-        // CENARIO (inseridos com um loop)
+
+
+        //Registra os TILES que compoem o cenário. Nesse caso usa-se um loop para inserir a partir dessa matriz, garantindo as posições corretas.
         var tiles = [
             [2, 'land067bn'], [0, 'land098'], [0, 'land043'], [0, 'land058'], [0, 'land099'], [2, 'land099'], [2, 'gui2c'], [2, 'gui2b'], [2, 'land098'], [0, 'gui2bw'],
             [2, 'land067'], [0, 'land098'], [0, 'land043'], [0, 'land058'], [0, 'land099'], [2, 'land029'], [2, 'land106'], [2, 'land106'], [2, 'land036'], [0, 'gui2c'],
@@ -156,7 +232,8 @@ var IsotopicHome = (function($){
         }
 
 
-        //VEICULOS
+
+        //Registra os VEÍCULOS em cima do cenário
         var delta = 0;
 
         delta = -320;
@@ -201,7 +278,7 @@ var IsotopicHome = (function($){
 
 
 
-        //Itens do DOM para serem animados
+        //Registra os itens do DOM para serem animados
         sprites['home_intro'] = document.getElementById("home_intro") || {'style':{}};
         sprites['item_airplane'] = document.getElementById("item_airplane") || {'style':{}};
         sprites['item_bus'] = document.getElementById("item_bus") || {'style':{}};
@@ -247,6 +324,8 @@ var IsotopicHome = (function($){
         document.getElementById('throbber').style.display = 'none';   
         appendCallToAction();
         updateScreen();
+
+        //Inicia o loop de animação
         requestAnimFrame(animate);
 
     }
@@ -267,34 +346,52 @@ var IsotopicHome = (function($){
     function animate() {
         requestAnimFrame( animate );
 
+        //Movimentação do container
         levelContainer.position.x = wW;
         levelContainer.position.y = wH + 300 - (400*easeOutQuad(ratio));
 
+        //parallax no holder, se não for mobile
         if(!is_touch){
             holder_position = (50-(50*easeOutQuad(ratio)));
             holder.style['transform'] = "translate(0px, "+holder_position+"px)";
             holder.style['-ms-transform'] = "translate(0px, "+holder_position+"px)";
             holder.style['-webkit-transform'] = "translate(0px, "+holder_position+"px)";
         }
+
+
+        //Percorre todos os elementos do objeto sprite que tenham o parâmetro timeline
         for(var key in sprites){
 
+            //Array temporário para conter o valor inicial e o final, entre dois keyframes consecutivos nas timelines
             var keyframes = [];
+            //Razão relativa para calcular a variação de valores entre dois keyframes consecutivos
             var relative_ratio = 0;
 
             if(sprites[key].timeline){
 
+
+                //Percorre as variações de key dentro de uma timeline
                 for(i=0;i<sprites[key].timeline.length-1;i++){
 
+                    //Se o ratio global está incluso neste intervalo de keys, os valores de keyframes são usados para atualização
                     if(ratio >= sprites[key].timeline[i].key && ratio <= sprites[key].timeline[i+1].key){
                         keyframes[0] = sprites[key].timeline[i];
                         keyframes[1] = sprites[key].timeline[i+1];
                     }
 
+                    //Só faz o cálculo se efetivamente tiver dois keyframes para poder calcular variação
                     if(keyframes.length==2){
+
+                        //Normaliza o ratio global para um ratio local correspondendo à variação entre os dois keyframes
                         relative_ratio = (ratio - keyframes[0].key) /(keyframes[1].key-keyframes[0].key);
+
+                        //Aplica efeito de easing usando equações do Robert Penner: http://upshots.org/actionscript/jsas-understanding-easing
                         relative_ratio = easeInOutQuad(relative_ratio);
+
+
                         var obj = sprites[key];
-                            //objeto pixi
+
+                        //Se for objeto PIXI, anima usando isso
                         if(obj.position!==undefined){
                             if( keyframes[0].x !==undefined){
                                 obj.position.x = keyframes[0].x + relative_ratio*(keyframes[1].x - keyframes[0].x);
@@ -309,7 +406,7 @@ var IsotopicHome = (function($){
                                 obj.rotation = keyframes[0].rotation + relative_ratio*(keyframes[1].rotation - keyframes[0].rotation);
                             }
                         }else{
-                            //dom elements
+                            //Se for DOM, anima usando isso
                             x=0; y=0;
                             if(keyframes[0].x){
                                 x =wW/2 + (keyframes[0].x + relative_ratio*(keyframes[1].x - keyframes[0].x));
@@ -334,20 +431,19 @@ var IsotopicHome = (function($){
     }
 
 
+    //Penner's
     function easeInOutQuad(t) {
         t /= 1/2;
         if (t < 1) return 1/2*t*t;
         t--;
         return -1/2 * (t*(t-2) - 1);
     }
-
-
     function easeOutQuad(t) {
         return 1 - Math.pow(1 - t, 2);
     }
 
 
-
+    //Chamada para scrolldown
     function appendCallToAction(){
         var cta = document.createElement("img");
         if(is_touch){
@@ -369,7 +465,7 @@ var IsotopicHome = (function($){
     }
 
 
-
+    //Atualização da global ratio para o caso de desktop
     function getRatioDesktop(){
         var body = document.body, html = document.documentElement;
         var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
@@ -377,6 +473,7 @@ var IsotopicHome = (function($){
         if(ratio>1){ratio=1;}
     }
 
+    //Atualização do tamanho do canvas
     function updateScreen(){
         wW = document.documentElement.clientWidth;
         wH = document.documentElement.clientHeight;
@@ -395,14 +492,15 @@ var IsotopicHome = (function($){
         }
     }
 
-
+    //Em mobile, só libera os cliques nos labels se estiver quase terminada a animação de scroll
     function itemTouch(event){
         event.preventDefault();
-        if(ratio>=0.985){
+        if(ratio>=0.986){
             event.target.click();
         }
     }
 
+    //Ao clicar na seta, anima o scroll automaticamente
     function introClick(event){
         $('html, body').stop().animate({
                 'scrollTop': $(document).height()-$(window).height()
