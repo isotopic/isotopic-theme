@@ -1,6 +1,6 @@
-<?php 
-get_header(); 
-get_template_part( 'page', 'header' ); 
+<?php
+get_header();
+get_template_part( 'page', 'header' );
 ?>
 
 
@@ -46,9 +46,9 @@ get_template_part( 'page', 'header' );
 
 	<?php
 
-	if (have_posts()){ 
+	if (have_posts()){
 
-	    while (have_posts()){ 
+	    while (have_posts()){
 
 	     	//Iterator
 			the_post();
@@ -61,7 +61,7 @@ get_template_part( 'page', 'header' );
 			$date = get_the_date( $d );
 
 			?>
-			
+
 			<header>
 			<h2><?php echo $title; ?></h2>
 			<p><?php echo $date; ?></p>
@@ -70,7 +70,17 @@ get_template_part( 'page', 'header' );
 			<article>
 			<p><?php echo $content; ?></p>
 			</article>
-			
+
+
+
+
+
+
+
+			<?php get_template_part( 'single', 'disqus'); ?>
+
+
+
 			<?php
 
 			//----- Exibir comentários
@@ -198,8 +208,8 @@ get_template_part( 'page', 'header' );
 
 <?php
 
-get_template_part( 'page', 'footer' ); 
-get_footer(); 
+get_template_part( 'page', 'footer' );
+get_footer();
 
 ?>
 
