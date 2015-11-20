@@ -8,13 +8,20 @@
 <?php wp_head(); ?>
 
 
+<?php
+$og_image = get_template_directory_uri().'/img/isotopic_share.jpg';
+if ( has_post_thumbnail() ) {
+	$og_image = wp_get_attachment_image_src( get_post_thumbnail_id( $ID ), 'large' );
+	$og_image = $og_image[0];
+} ?>
 <meta property="og:site_name" content="Isotopic"/>
+<meta property="og:image" content="<?php echo $og_image; ?>" />
+<meta property="og:url" content="<?php echo the_permalink(); ?>" />
 <?php if(is_single()){ ?>
 <meta property="og:title" content="<?php echo the_title(); ?>" />
-<meta property="og:url" content="<?php echo the_permalink(); ?>" />
 <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
+<meta property="og:type" content="article" />
 <?php }?>
-
 
 
 <script>
