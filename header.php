@@ -7,6 +7,16 @@
 <title><?php wp_title( ' | ', true, 'right' ); echo get_bloginfo( 'name' ); ?></title>
 <?php wp_head(); ?>
 
+
+<meta property="og:site_name" content="Isotopic"/>
+<?php if(is_single()){ ?>
+<meta property="og:title" content="<?php echo the_title(); ?>" />
+<meta property="og:url" content="<?php echo the_permalink(); ?>" />
+<meta property="og:description" content="<?php echo the_excerpt(); ?>" />
+<?php }?>
+
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
