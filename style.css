@@ -1015,18 +1015,49 @@ color:#333;
   padding-right: 7px;
 }
 .blog-post header{
-  margin-bottom:30px;
+  margin-bottom:50px;
+}
+.blog-post header h4{
+    font-size: 18px;
+    margin-bottom:0px;
+    color:#aaa;
 }
 .blog-post header h2{
     font-size: 40px;
     line-height: 40px;
+    margin-top:10px;
     margin-bottom:4px;
+
+    border-bottom:1px solid #ccc;
+    padding-bottom:5px;
 }
 .blog-post header p{
     color:#888;
     font-size: 16px;
     margin:0px;
+    float:left;
+    text-transform: uppercase;
 }
+.blog-post header p a{
+    color:#999;
+}
+.blog-post header p a:hover{
+    color:#333;
+}
+.blog-post header p.tags{
+    float:right;
+    text-transform: none !important;
+}
+
+.blog-post header p.tags img{
+    width:14px;
+    height:14px;
+    margin-right:4px;
+    opacity:0.4;
+}
+
+
+
 .blog-post h3{
   font-size:26px;
   margin:45px 0 15px 0;

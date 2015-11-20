@@ -33,9 +33,6 @@ get_template_part( 'page', 'header' );
 
 
 
-
-
-
 <div class="content-panel blog-content">
 	<div class="container">
 
@@ -60,11 +57,28 @@ get_template_part( 'page', 'header' );
 			$content = get_the_content();
 			$date = get_the_date( $d );
 
+			//Categories
+			$categories = "";
+			$category_array = get_the_category();
+			for($a=0; $a<count($category_array); $a++){
+				$categories .= ($a>0?', ':''). '<a href="'.home_url().'/blog/category/'.$category_array[$a]->slug.'">'.$category_array[$a]->name.'</a>';
+			}
+
+			//Tags
+			$tags = "";
+			$tags_array = get_the_tags();
+			for($a=0; $a<count($tags_array); $a++){
+				$tags .= ($a>0?', ':'').'<a href="'.home_url().'/blog/tag/'.$tags_array[$a]->slug.'">'.$tags_array[$a]->name.'</a>';
+			}
+
 			?>
 
 			<header>
+			<h4><?php echo $date; ?> </h4>
 			<h2><?php echo $title; ?></h2>
-			<p><?php echo $date; ?></p>
+			<p><?php  echo $categories; ?></p>
+			<p class="tags"><img src="<?php echo get_template_directory_uri(); ?>/img/tags.png"> <?php echo $tags; ?></p>
+			<div class="clearfix"></div>
 			</header>
 
 			<article>
