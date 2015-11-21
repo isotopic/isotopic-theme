@@ -988,6 +988,17 @@ color:#333;
 }
 
 
+.blog-side ul.taglist li{
+  display:inline-block;
+  margin:0px 1px;
+}
+
+.blog-side ul.taglist li a{
+  color:#fff;
+}
+
+
+
 .blog-pagination{
   /*border-top:1px dashed #999;*/
   padding-left: 0px;
@@ -1010,8 +1021,8 @@ color:#333;
   background-color:#50A9C2;
   color:#fff;
   display:inline-block;
+  margin:0;
   padding:2px 8px 3px 8px;
-  margin:1px 0px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;

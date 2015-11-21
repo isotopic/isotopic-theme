@@ -23,7 +23,7 @@
 			foreach ( $tags as $tag ) {
 				$tag_link = get_tag_link( $tag->term_id ); 
 				$active_class = ($current_tag == $tag->slug ? 'active' : '' );
-				echo ' <a href="'.$tag_link.'" class="tag-pill '.$active_class.'">'.$tag->name.'</a>';
+				echo '<li><a href="'.$tag_link.'" class="tag-pill '.$active_class.'">'.$tag->name.'</a></li>';
 			}
 			?>
 			</ul>
