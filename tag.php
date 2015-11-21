@@ -62,15 +62,7 @@ get_template_part( 'page', 'header' );
 
 			
 			<div class="col-sm-5 blog-side">
-				<h4>Tags</h4>
-				<?php 
-				$tags = get_tags();
-				foreach ( $tags as $tag ) { $tag_link = get_tag_link( $tag->term_id ); ?>
-							
-					<a class="tag-pill" href="<?php echo $tag_link;?>"><?php echo  $tag->name;?></a>
-
-				<?php } ?> 
-
+				<?php get_template_part( 'home', 'blog-side-tags'); ?>
 			</div>
 			
 

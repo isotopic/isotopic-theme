@@ -1,4 +1,6 @@
 
+
+			<h3>Categories</h3>
 			<ul>
 			<?php
 

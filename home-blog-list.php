@@ -3,8 +3,6 @@
 
 	if (have_posts()){ 
 
-		$separator = "";
-
 	    while (have_posts()){ 
 
 			the_post();
@@ -23,25 +21,27 @@
 
 			echo $separator;
 
+			echo '<a href="'.$permalink.'">';
+
 			if($img_url!=false){
 				echo '<img src="'.$img_url[0].'" class="img-responsive custom-post-image">';
 			}
 
-			echo '<h2><a href="'.$permalink.'">'.$title.'</a> </h2>';
+			echo '<h2>'.$title.'</h2>';
 
+			echo '<span>'.$date.'</span>';
 
 			//<span>'.$date.'</span>
-
-
-
 			echo the_excerpt();
+
+			echo '</a>';
+
 			/*
 			echo "\n\t".'Comments: [<a href="'.$permalink.'"> ';
 			comments_number('0','1','%');
 			echo ' </a>]';
 			*/
-
-			$separator = "<hr>";
+			echo "<hr>";
 
 	    }
 
