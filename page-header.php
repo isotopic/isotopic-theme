@@ -14,7 +14,7 @@ $title = strtolower(get_the_title( $ID ));
 			 if(is_home()){
 				echo "blog";
 			} else if (is_tag()){
-				echo  single_tag_title('tag: ');
+				echo  single_tag_title('tagged: ');
 			}else if (is_category()){
 				echo  single_cat_title('cat: ');
 			}else if (is_404()){
