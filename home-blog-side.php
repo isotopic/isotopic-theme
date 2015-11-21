@@ -19,11 +19,11 @@
 			<ul class='taglist'>
 			<?php
 			$tags = get_tags();
-			$separator = "";
+			$current_tag = ( is_tag() ? single_tag_title('',false) : 'n');
 			foreach ( $tags as $tag ) {
 				$tag_link = get_tag_link( $tag->term_id ); 
-				echo $separator.' <a href="'.$tag_link.'" class="tag-pill">'.$tag->name.'</a>';
-				//$separator = ',';
+				$active_class = ($current_tag == $tag->slug ? 'active' : '' );
+				echo ' <a href="'.$tag_link.'" class="tag-pill '.$active_class.'">'.$tag->name.'</a>';
 			}
 			?>
 			</ul>
