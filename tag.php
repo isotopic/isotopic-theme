@@ -62,7 +62,7 @@ get_template_part( 'page', 'header' );
 
 			
 			<div class="col-sm-5 blog-side">
-				<?php get_template_part( 'home', 'blog-side-tags'); ?>
+				<?php get_template_part( 'home', 'blog-side'); ?>
 			</div>
 			
 
