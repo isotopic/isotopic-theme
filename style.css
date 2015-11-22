@@ -905,7 +905,7 @@ color:#333;
 
 .blog-list h2{
   margin-top: 10px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   line-height:28px;
 }
 
@@ -1083,7 +1083,7 @@ a.tag-pill:hover, a.tag-pill.active{
     margin-bottom:4px;
 
     border-bottom:1px solid #ccc;
-    padding-bottom:5px;
+    padding-bottom:8px;
 }
 .blog-post header p{
     color:#888;
@@ -1129,6 +1129,11 @@ a.tag-pill:hover, a.tag-pill.active{
 .blog-post article img{
   margin-top:30px;
   margin-bottom:30px;
+}
+
+
+.blog-post article{
+  margin-bottom:100px;
 }
 
 
