@@ -57,6 +57,11 @@ pre{
   border:1px dashed gray;
 }
 
+code{
+  font-size:15px;
+  color:#999;
+  background-color: white;
+}
 
 /*
 
