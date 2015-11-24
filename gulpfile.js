@@ -91,7 +91,8 @@ gulp.task('watch-js', function () {
 
 
 /**
-Deploy - SÓ EM UNIX
+Deploy - SÓ EM UNIX.
+A senha é inserida interativamente
 */
 gulp.task( 'deploy', function() {
   rsync({
