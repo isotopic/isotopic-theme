@@ -424,9 +424,9 @@ function remove_post_meta_boxes() {
 	$ancestors =  get_post_ancestors( $ID );
 
 	if( count($ancestors)>0 && $ancestors[0]==$projects_id ){
-		remove_meta_box('postcustom', 'post', 'normal');
-        remove_meta_box('postcustom', 'page', 'normal');
-        echo "ADFADFA";
+		//remove_meta_box('postcustom', 'post', 'normal');
+       // remove_meta_box('postcustom', 'page', 'normal');
+		//Não remover pois o link externo do projeto está como custom
 	}else{
 		remove_meta_box('tagsdiv-type', 'post', 'side');
         remove_meta_box('tagsdiv-type', 'page', 'side');
