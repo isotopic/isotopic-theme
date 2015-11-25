@@ -457,8 +457,8 @@ function remove_post_meta_boxes() {
     remove_meta_box('revisionsdiv', 'post', 'normal');
     remove_meta_box('revisionsdiv', 'page', 'normal');
 
-    remove_meta_box('postcustom', 'post', 'normal');
-    remove_meta_box('postcustom', 'page', 'normal');
+    //remove_meta_box('postcustom', 'post', 'normal');
+    //remove_meta_box('postcustom', 'page', 'normal');
 
 }
 
