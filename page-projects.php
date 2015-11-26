@@ -198,6 +198,15 @@ get_template_part( 'page', 'header' );
 
 
 
+
+		<?php if(count($children)==0){ ?>
+
+		<div class="text-center project-locker"><img src="<?php echo get_template_directory_uri().'/img/lock.png';?>" alt="Not available"></div>
+
+		<?php } ?>
+
+
+
 		</div><!-- /row -->
 	</div><!-- /container -->
 </div><!-- /projects-panel -->
