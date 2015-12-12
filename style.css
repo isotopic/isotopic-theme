@@ -352,7 +352,7 @@ body.home {
   width:auto;
   background-color:#efefef;
   color:#222;
-  width: 135px;
+  width: 155px;
   left:26px;
   top:3px;
   padding:5px 8px;
@@ -372,6 +372,7 @@ body.home {
 
 .home-item-lefty a{
   left:-164px;
+  width: 135px;
   text-align:right;
 }
 
