@@ -142,14 +142,14 @@ get_template_part( 'page', 'header' );
 
 		<?php
 
-		$args = array('post_parent' => get_the_ID(),'post_type'   => 'page', 'posts_per_page' => -1,'post_status' => 'publish' );
+		$args = array('post_type' => 'project', 'posts_per_page' => -1,'post_status' => 'publish' );
 
 		$children = get_children( $args);
 
 		foreach($children as $project){
 
 			$title = get_the_title($project->ID);
-			$link = get_page_link( $project->ID);
+			$link = get_permalink( $project->ID);
 			$img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $project->ID ), 'large' );
 			$default_error_image = get_template_directory_uri().'/img/default/700x500.jpg';
 			$type_name = "&nbsp;";        $type_slug = "";

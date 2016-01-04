@@ -1,7 +1,5 @@
 <?php
 /**
- * Template Name: Project Detail
- *
  * Detalhe de um projeto (child page of projects)
  */
 get_header();

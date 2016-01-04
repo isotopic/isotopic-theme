@@ -3,7 +3,7 @@
 
 1. HEAD
 2. THEME SUPPORT
-3. TAXONOMIES
+3. CUSTOM POSTS AND TAXONOMIES
 4. FILTERS
 5. ADMIN
 
@@ -31,7 +31,7 @@ function isotopic_enqueue_style() {
     wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.min.css', false, null );
     wp_enqueue_style( 'fonts', '//fonts.googleapis.com/css?family=Dosis:300,400,500,600', false, null );
     wp_enqueue_style( 'core', get_stylesheet_uri(), array('bootstrap','fonts'), null );
-    if(is_single()){
+    if(is_singular('post')){
     	wp_enqueue_style( 'prism', get_template_directory_uri().'/css/prism.css', false, null );
     }
 }
@@ -84,9 +84,34 @@ add_theme_support( 'post-thumbnails' );
 
 /*
 ====================================================================================================
-==================================================================================================== 3. TAXONOMIES
+==================================================================================================== 3. CUSTOM POSTS AND TAXONOMIES
 ====================================================================================================
 */
+
+
+
+add_action( 'init', 'create_post_type' );
+
+function create_post_type() {
+
+  register_post_type( 'project',
+    array(
+      'labels' => array(
+        'name' => __( 'Projects' ),
+        'singular_name' => __( 'Project' )
+      ),
+      'menu_position' => 8,
+      'public' => true,
+      'show_ui' => true,
+      'supports' => array('title','editor','custom-fields', 'thumbnail'),
+      'rewrite' => array('slug' => 'projects','with_front' => false),
+      'has_archive' => false
+    )
+  );
+
+
+}
+
 
 
 add_action( 'init', 'project_taxonomies' );
@@ -95,7 +120,7 @@ function project_taxonomies() {
 
 	register_taxonomy(
 		'type',
-		'page',
+		'project',
 		array(
 			'label' => __( 'Type' ),
 			'rewrite' => array( 'slug' => 'type' ),
@@ -106,7 +131,7 @@ function project_taxonomies() {
 
 	register_taxonomy(
 		'service',
-		'page',
+		'project',
 		array(
 			'label' => __( 'Service' ),
 			'rewrite' => array( 'slug' => 'service' ),
@@ -117,7 +142,7 @@ function project_taxonomies() {
 
 	register_taxonomy(
 		'client',
-		'page',
+		'project',
 		array(
 			'label' => __( 'Client' ),
 			'rewrite' => array( 'slug' => 'client' ),
@@ -560,7 +585,7 @@ function shortcuts_widget_function(){
 		</ul>
 		<ul>
 			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php">Blog post</a></li>
-			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=page&page_parent=<?php echo $projects_id;?>">Project</a></li><!-- predefined page_parent is a hack! -->
+			<li><span class="clone-icon clone-icon-add"></span> <a href="post-new.php?post_type=project">Project</a></li>
 			<li><span class="clone-icon clone-icon-add"></span> <a href="media-new.php">Media</a></li>
 		</ul>
 		
