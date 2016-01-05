@@ -20,7 +20,7 @@ $content =  apply_filters('the_content', get_post_field('post_content', $ID));
 
 $link = get_page_link( );
 
-$project_url = get_post_meta($ID, 'project_url', true);
+$project_url = project_url_get_meta( 'project_url_project_url' );
 
 
 
