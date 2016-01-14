@@ -196,7 +196,7 @@ if ( !empty($images) ){
 
 
 <script src="<?php echo get_template_directory_uri(); ?>/src/js/jquery-1.11.2.min.js"></script>
-<!--<script src="<?php echo get_template_directory_uri(); ?>/src/js/projects.js"></script>-->
+<script src="<?php echo get_template_directory_uri(); ?>/src/js/project.js"></script>
 
 
 
