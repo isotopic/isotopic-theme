@@ -293,7 +293,7 @@ body.home {
 #home_intro h2{
   font-weight: 300;
   line-height: 52px;
-  font-size:54px;
+  font-size:45px;
   color:#fff;
   margin:0 0 20px 0;
   padding:0;
@@ -305,12 +305,27 @@ body.home {
   padding:0;
   color:#6C8D97;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 20px;
   line-height:26px;
    display:block;
 }
 
+#home_intro h2 span b{
+  color:#476872;
+  font-weight: 700;
+}
 
+@media screen and (max-width: 500px) {
+  #home_intro h2{
+    font-size:40px;
+    margin:-35px 0 20px 0;
+  }
+  #home_intro h2 span{
+    padding-left:20px;
+    padding-right:20px;
+    font-size: 20px;
+  }
+}
 
 #home_intro p{
   margin: 0 auto;
